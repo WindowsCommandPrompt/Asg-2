@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang = "EN-US">
+  <head> 
+    <meta charset = "UTF-8"> 
+    <title> The rewards page </title> 
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href = "gamesPage.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "normalise.css" rel = "stylesheet" type = "text/css"> 
+  </head> 
+  <body> 
+    <!--Please wait while api verifies if user has already spun the wheel--> 
+    <div id = "loadingVerify"> 
+      <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wp1lvfp0.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      <h1>Please wait while we verify you...</h1>
+    </div> 
+    <!--Information--> 
+    <div id = "spinWheelInformation1RollPerDay"> 
+      <div id = "spinWheelMessage"> 
+        <h2>You have already spun the wheel today.</h2>
+      </div> 
+    </div> 
+    <!--end--> 
+    <div id = "LoadingBase">
+      <div id = "loading">
+        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_w6xlywkv.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+        Please wait while we process your like / dislike request....
+      </div>   
+    </div> 
+    <!--The following can be recycled--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Oops! It seems like you don't have sufficient funds... </h4>
+        <small> Psst....!!! You can now earn points from daily rewards and even playing games! </small>
+        <br>
+        <br>
+        <br>
+        <button type = "button" id = "closeMessage">OK</button>
+      </div> 
+    </div>
+    <!--end--> 
+    <!--Repeat the following for each box (6 times in total)--> 
+    <!--Prompt the user if he really wants to purchase the following item--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs5HintsMinesweeper">
+          Minesweeper game 5 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm5HintsPurchase">CONFIRM</button> 
+          <button type = "button" id = "cancel5HintsPurchase">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--Buy 10 hints--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs10HintsMinesweeper">
+          Minesweeper game 10 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm10HintsPurchase">CONFIRM</button> 
+          <button type = "button" id = "cancel10HintsPurchase">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--20 hints minesweeper--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs20HintsMinesweeper">
+          Minesweeper game 20 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm20HintsPurchase">CONFIRM</button> 
+          <button type = "button" id = "cancel20HintsPurchase">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--5 hints sudoku--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs5HintsSudoku">
+          Sudoku game 5 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm5HintsPurchaseSudoku">CONFIRM</button> 
+          <button type = "button" id = "cancel5HintsPurchaseSudoku">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--10 hints sudoku--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs10HintsSudoku">
+          Sudoku game 10 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm10HintsPurchaseSudoku">CONFIRM</button> 
+          <button type = "button" id = "cancel10HintsPurchaseSudoku">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--20 hints sudoku--> 
+    <div class = "buyItemMessageBase">
+      <div class = "custom"> 
+        <h4> Confirm purchase </h4>
+        <div id = "BoughtItemIs20HintsSudoku">
+          Sudoku game 20 Hints
+        </div> 
+        <br>
+        <br>
+        <small> Please do take note that all in-game power ups are non-refundable. Think twice before making this decision. </small> 
+        <br> 
+        <br>  
+        <div class = "purchaseControl"> 
+          <button type = "button" id = "confirm20HintsPurchaseSudoku">CONFIRM</button> 
+          <button type = "button" id = "cancel20HintsPurchaseSudoku">RETURN</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--SPINNING WHEEL REWARDS BACKGROUND--> 
+    <div class = "spinningWheelBackground">
+      <div id = "spinningWheelResult"> 
+        <div id = "something"> 
+          <i class = "material-icons close" style = "font-size: 50px;">close</i> 
+        </div> 
+        <h1> Congratulations you have just earned <span id = "spinResult"></span> points for yourself!</h1>
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_vdvlo3sf.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      </div> 
+    </div>  
+  <!--Prompt the user if the user would want to change his or her password or username-->
+    <div class = "positionToFixedDisplayToNone">
+      <div id = "editAccount">
+        <h1>Change password AND/OR username</h1>
+        <small>The process is very simple. Just follow the steps below.</small>
+        <br> 
+        <br> 
+        <div id = "fitCenter"> 
+          <div class = "loginCard"> 
+            <i class = "material-icons color" style = "font-size: 50px; position: relative">exit_to_app</i>
+            <div class = "formCluster"> 
+              <h3> One account. All of ZY Games</h3> 
+              <div class = "loginField"> 
+                <label> Username: </label>  
+                <input type = "text" placeholder = "Username" required id = "usernameInputVerify">
+              </div> 
+              <div class = "loginField">
+                <label> Password: </label>
+                <input type = "text" placeholder = "Password" required id = "passwordInputVerify">
+              </div> 
+              <br> 
+              <br> 
+              <div class = "formControls"> 
+                <button type = "reset" id = "resetButtonVerify">Reset All</button>
+                <button type = "button" id = "logInButtonVerify">Log In </button> 
+              </div> 
+            </div> 
+            <br> 
+            <br> 
+          </div>
+        </div> 
+      </div> 
+    </div>
+    <!--Prompt end--> 
+    <!--Game info pop-up game Sudoku, followed by the Minesweeper one--> 
+    <div class = "gameInfoPopUpBase">
+      <div class = "Back" style = "width: 100%"> 
+        <!--Set this box 'justify-content' property to 'flex-end'--> 
+        <div class = "controlBar">
+          <i class = "material-icons popUpCloseButton" style = "font-size: 50px;">close</i>
+        </div> 
+        <!--All the game information Sudoku game will go here--> 
+        <div class = "mainInfo"> 
+          <div style = "width: 100%; background-color: red; height: 75px; display: flex; justify-content: center; align-items: center; color: white;" class = "Switcher"> 
+            You have not signed in.
+          </div>
+          <div class = "nameImageWhoCreatedIt">
+            <div id = "image1"> 
+            </div>
+            <div class = "gameInformation"> 
+              <div class = "gameIdentifier"> 
+                <h1>Sudoku</h1>
+              </div> 
+              <div class = "gameDeveloperIdentifier">
+                Zhe Yun
+              </div> 
+              <br> 
+              <br> 
+              A game of sudoku. Easy as you think it is, but you actually need some skills in order to master this game LOL. 
+              <br> 
+              <br> 
+              <div class = "buttonFormatting"> 
+                <button type = "button" class = "buttonFormatting">PLAY</button>
+              </div>  
+            </div>  
+          </div>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "gameInfoPopUpBase">
+      <div class = "Back" style = "width: 100%">
+        <div class = "controlBar"> 
+          <i class = "material-icons popUpCloseButton" style = "font-size: 50px">close</i>
+        </div> 
+        <div class = "mainInfo">
+          <div style = "width: 100%; background-color: red; height: 75px; display: flex; justify-content: center; align-items: center; color: white;" class = "Switcher"> 
+            You have not signed in.
+          </div> 
+          <div class = "nameImageWhoCreatedIt">
+            <div id = "image2">               
+            </div>
+            <div class = "gameInformation"> 
+              <div class = "gameIdentifier"> 
+                <h1>Minesweeper v.1.5</h1>
+              </div> 
+              <div class = "gameDeveloperIdentifier">
+                Zhe Yun
+              </div> 
+              <br> 
+              <br> 
+              A game of sudoku. Easy as you think it is, but you actually need some skills in order to master this game LOL. 
+              <br> 
+              <br> 
+              <div class = "buttonFormatting"> 
+                <button type = "button" class = "buttonStyling">PLAY</button> 
+              </div> 
+            </div>  
+          </div>
+        </div> 
+      </div> 
+    </div> 
+    <!--First item--> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo"> 
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div> 
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right; display: flex">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> Remove 5 tiles (Minesweeper game)</h1> 
+          <small>Type: hint</small> 
+          <br>
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 195 </h1> 
+            </div> 
+          </div> 
+          <br>
+          Item description: 
+          <br>
+          Removes any 5 tiles from the board. Does not reveal the exact location of the mine. Each hint reveals only 1 tile on the board. <strong>You can only use this item in the Minesweeper game.</strong>
+          <br>
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo"> 
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div> 
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right; display: flex">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> Remove 10 tiles (Minesweeper game)</h1> 
+          <small>Type: hint</small> 
+          <br>
+          <br> 
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 290 </h1> 
+            </div> 
+          </div>
+          <br>
+          <br>
+          Item description: 
+          <br>
+          Removes any 10 tiles from the board. Does not reveal the exact location of the mines. Each hint reveals only 1 tile on the board. <strong>You can only use this item in the Minesweeper game.</strong>
+          <br>
+          <br> 
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo"> 
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div> 
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> Remove 20 tiles (Minesweeper game) </h1> 
+          <small>Type: hint</small> 
+          <br>
+          <br>
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 570 </h1> 
+            </div> 
+          </div>
+          <br>
+          <br>
+          Item description: 
+          <br>
+          Removes any 20 tiles from the board. Does not reveal the exact location of the mines. Each hint reveals only 1 tile on the board. <strong>You can only use this item in the Minesweeper game.</strong>
+          <br>
+          <br> 
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo">
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div>
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> 5 hints (Sudoku Game)</h1>
+          <small>Type: hint</small>  
+          <br>
+          <br>
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 165 </h1> 
+            </div> 
+          </div> 
+          <br>
+          <br>
+          Item description: 
+          <br>
+          Gives you 5 hints. Each hint reveals only 1 tile on the board. You can use this hint in any difficulty, ranging from Easy to Extreme. <strong>You can only use this item in the Sudoku game.</strong>
+          <br>
+          <br> 
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo"> 
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div> 
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> 10 hints (Sudoku Game)</h1> 
+          <small>Type: hint</small>
+          <br>
+          <br>
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 260 </h1> 
+            </div> 
+          </div>
+          <br>
+          <br>
+          Item description: 
+          <br>
+          Gives you 10 hints. Each hint reveals only 1 tile on the board.You can use this hint in any difficulty, ranging from Easy to Extreme. <strong>You can only use this item in the Minesweeper game.</strong>
+          <br>
+          <br> 
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div> 
+    <div class = "purchaseItemInfoPopUpBase">
+      <div class = "Back" style = "width: 75%; height: 100%;">
+        <div class = "mainInfo"> 
+          <div class = "controlBar">
+            <i class = "material-icons popUpCloseButtonPurchaseItems" style = "font-size: 50px;">close</i>
+          </div> 
+          <div class = "scorePossession">
+            <div style = "width: 100%; height: 20%;">
+              You have: 
+            </div> 
+            <div style = "width: 100%; height: 80%; text-align: right">
+              <h1><span class = "currentPointsThatTheUserHas"><lottie-player src="https://assets5.lottiefiles.com/packages/lf20_hwm68tlm.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player></span>points</h1>
+            </div> 
+          </div> 
+          <h1> 20 hints (Sudoku Game) </h1> 
+          <small>Type: hint</small> 
+          <br>
+          <br>
+          <div class = "priceOfItem"> 
+            <div class = "first">
+              points required: 
+            </div> 
+            <div class = "actual">
+              <h1> 540 </h1> 
+            </div> 
+          </div> 
+          <br>
+          <br>
+          Item description: 
+          <br>
+          Gives you 20 hints. Each hint reveals only 1 tile on the board. You can use this hint in any difficulty, ranging from Easy to Extreme. <strong>You can only use this item in the Minesweeper game.</strong>
+          <br>
+          <br> 
+          <button type = "button" class = "getItemButton">Buy this item</button>
+        </div> 
+      </div> 
+    </div>
+    <!--Prompt the user to login before they can cast their upvotes or downvotes--> 
+    <div id = "TranslucentBlackColorBase">
+      <div class = "Back">
+        <!--LoginCard--> 
+        <h1 style = "text-align: center">PLEASE SIGN IN TO CONTINUE</h1>
+        <div class = "loginCard"> 
+          <i class = "material-icons color" style = "font-size: 50px; position: relative">exit_to_app</i>
+          <div class = "formCluster"> 
+            <h3> One account. All of ZY Games</h3> 
+            <div class = "loginField"> 
+              <label> Username: </label>  
+              <input type = "text" placeholder = "Username" id = "usernameInput">
+            </div> 
+            <div class = "loginField">
+              <label> Password: </label>
+              <input type = "text" placeholder = "Password" id = "passwordInput">
+            </div> 
+            <br> 
+            <br> 
+            <div class = "formControls"> 
+              <button type = "reset" id = "resetButton">Reset All</button>
+              <button type = "button" id = "logInButton">Log In </button> 
+            </div> 
+          </div> 
+          <br> 
+          <br> 
+          <button type = "button" id = "CreateNewAccount">New user? Create a new account here.</button> 
+        </div>
+      </div> 
+    </div> 
+    <!--Opened menu--> 
+    <div id = "contents"> 
+      <div id = "internalText"> 
+        <i class = "material-icons" style = "font-size: 50px" id = "closeMenu">close</i>
+        <div id = "signInStatus"> 
+          <div id = "frame"> 
+            <i class = "material-icons" style = "font-size: 50px">person</i>
+          </div> 
+          <div id = "AccountControls"> 
+            <p id = "textSize">Not signed in</p>
+            <div id = "internalAccountControls"> 
+              <i class = "material-icons" style = "font-size: 50px" id = "asideLoginButton">login</i>
+            </div> 
+          </div> 
+        </div> 
+        <!--SignInStatus end--> 
+        <div id = "toHomePage">
+          Home Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div>
+        <div id = "toRewardsPage">
+          Rewards Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div>
+        <div id = "toGamesPage">
+          Games Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div>  
+      </div> 
+    </div> 
+    <!-- div end --> 
+    <!--The main backbone of the creation page--> 
+    <header>
+      image 
+      <nav> 
+        <div class = "navElement">
+          Home
+        </div> 
+        <div class = "navElement"> 
+          Games
+        </div> 
+        <div class = "navElement"> 
+          Rewards
+        </div> 
+      </nav> 
+      <div id = "UserAccountControls"> 
+        <div class = "red">
+          Logout 
+        </div> 
+        <div class = "blue">
+          Edit account 
+        </div> 
+      </div> 
+      <button type = "button" id = "LoginRedirect">Log in</button> 
+    </header> 
+    <!--New nav bar--> 
+    <div id = "newNavBar">
+      <i class = "material-icons" style = "font-size: 50px;" id = "openMenu">menu</i> 
+    </div>  
+    <!--ACTUAL DOCUMENT START--> 
+    <div id = "warningMessage">
+      <i class = "material-icons">warning</i>
+      WARNING! Please view these pages in Chrome or Microsoft Edge only
+    </div> 
+    <div id = "PageInfo">
+      
+    </div> 
+    <div id = "MainContentBox"> 
+      <div id = "navigator">
+        <div id = "introduction"> 
+          Introduction
+        </div> 
+        <div id = "multiplayer"> 
+          Multiplayer
+        </div> 
+        <div id = "singleplayer"> 
+          Singleplayer 
+        </div> 
+        <div id = "dailyRewards">
+          Daily Rewards
+        </div> 
+        <div id = "buyPowerUps">
+          Buy power ups for games
+        </div> 
+      </div> 
+      <!--This will be the thing that the player would see when this page is loaded-->
+      <div id = "informationLanding"> 
+        <div class = "Box"> 
+          <div class = "signInReason">
+            <div class = "Reasoning"> 
+              <div id = "LazyNavigationWithKeybinds">
+                <div id = "featureDescription"> 
+                  <h2>Get to navigate around on this page with just a key on your keyboard. </h2>
+                  <div class = "row"> 
+                    <div class = "subItem"> 
+                      <div class = "fr"> 
+                        <kbd> I </kbd> 
+                      </div> 
+                      Returns you to the 'Information' section on this page. 
+                    </div> 
+                    <div class = "subItem"> 
+                      <div class = "fr"> 
+                        <kbd> M </kbd> 
+                      </div> 
+                      Returns you to the 'Multiplayer' section on this page. 
+                    </div> 
+                    <div class = "subItem"> 
+                      <div class = "fr"> 
+                        <kbd> S </kbd> 
+                      </div> 
+                      Returns you to the 'Singleplayer' section on this page.
+                    </div> 
+                  </div>
+                  <div class = "row">  
+                    <div class = "subItem"> 
+                      <div class = "fr"> 
+                        <kbd> D </kbd> 
+                      </div>
+                      Returns you to the 'Daily Rewards' section on this page. 
+                    </div> 
+                    <div class = "subItem">
+                      <div class = "fr">  
+                        <kbd> B </kbd> 
+                      </div>
+                      Returns you to the 'Buy power ups for games' section on this page.
+                    </div>
+                  </div> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+      <div id = "informationMultiplayer"> 
+        <div class = "Box"> 
+          <h1> Coming soon </h1>
+        </div> 
+      </div> 
+      <div id = "informationSingleplayer"> 
+        <h1 style = "text-align: center">Hover above each of the images below to learn about each game</h1>
+        <div class = "Box" id = "changeFlexDirection"> 
+          <div id = "RedirectToSudokuGame"> 
+            <div id = "TranslucentBlackColorBaseSudoku"> 
+              <div id = "internalSudoku">
+                <div class = "gameInfo"> 
+                  <h1>Sudoku</h1> 
+                  <small style = "font-weight: bold">Someone</small> 
+                  Hard but easy. All 4 levels. Can you beat it? 
+                  <br>
+                  <br> 
+                  <div class = "goodOrBad">
+                    <div class = "inside"> 
+                      <div class = "goodCluster"> 
+                        <i class = "material-icons" id = "thumbsUpSudoku">thumb_up_alt</i> 
+                        <span id = "LikeSudoku">0</span>
+                      </div> 
+                      <div class = "badCluster"> 
+                        <i class = "material-icons" id = "thumbsDownSudoku">thumb_down_alt</i> 
+                        <span id = "DislikeSudoku">0</span> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+                <div class = "buttonHoldingArea"> 
+                  <button type = "button" class = "redirectButton"> 
+                    <i class = "material-icons" id = "openSudokuGame">play_arrow</i> 
+                  </button> 
+                </div> 
+              </div> 
+            </div> 
+          </div>
+          <div id = "RedirectToMinesweeperGame"> 
+            <div id = "TranslucentBlackColorBaseMinesweeper"> 
+              <div id = "internalMinesweeper">
+                <div class = "gameInfo"> 
+                  <h1> Minesweeper v.1.5 </h1> 
+                  <small style = "font-weight: bold">Someone</small> 
+                  A game of minesweeper. Are you ready to clear all these levels? 
+                  <br>
+                  <br> 
+                  <div class = "goodOrBad">
+                    <div class = "inside"> 
+                      <div class = "goodCluster"> 
+                        <i class = "material-icons" id = "thumbsUpMinesweeper">thumb_up_alt</i> 
+                        <span id = "LikeMinesweeper">0</span>
+                      </div> 
+                      <div class = "badCluster"> 
+                        <i class = "material-icons" id = "thumbsDownMinesweeper">thumb_down_alt</i> 
+                        <span id = "DislikeMinesweeper">0</span> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+                <div class = "buttonHoldingArea"> 
+                  <button type = "button" class = "redirectButton"> 
+                    <!--Pop-up page that would allow the player to go and play minesweeper --> 
+                    <i class = "material-icons" id = "openMinesweeperGame">play_arrow</i> 
+                  </button> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+      <div id = "informationDailyRewards">
+        <h1> Spin the wheel to get an awesome reward! </h1>
+        <small>Players would get an opportunity to roll the wheel once every single day</small>
+        <div class = "Box" style = "flex-direction: column;"> 
+          <!--Main flex container to house the play directions, spinning wheel, and the spin the wheel button--> 
+          <div style = "display: flex; flex-direction: column;"> 
+            <!--Must forever remain as a row--> 
+            <div  style = "width: 100%; background-color: red; height: 75px; display: flex; justify-content: center; align-items: center; color: white;" class = "Switcher"> 
+              You are not signed in. Please sign in in order to claim your daily rewards.
+            </div> 
+            <br>
+            <div style = "display: flex; justify-content: center; height: 100%;"> 
+              <div style = "display: flex; height: 100%; align-items: center"> 
+                <i class = "material-icons" style = "font-size: 75px;">play_arrow</i>
+              </div>
+              <!-- This whole div element will rotate--> 
+              <div id = "wheel">  
+                <div class = "wheelRow"> 
+                  <div id = "Box1">
+                    <p id = "RewardBox1">Bonus 10 points!</p>
+                  </div> 
+                  <div id = "Box2">
+                    <p id = "RewardBox2">Bonus 10 points!</p> 
+                  </div> 
+                </div> 
+                <div class = "wheelRow"> 
+                  <div id = "Box3">
+                    <p id = "RewardBox3">Bonus 30 points!</p> 
+                  </div> 
+                  <div id = "Box4">
+                    <p id = "RewardBox4">Bonus 30 points!</p> 
+                  </div> 
+                </div> 
+              </div>
+            </div> 
+          </div> 
+          <br> 
+          <br> 
+          <br> 
+          <div style = "display: flex; width: 100%; justify-content: center"> 
+            <!--This is the button where the person click on in order to spin the wheel--> 
+            <button type = "button" id = "spinTheWheel">SPIN THE WHEEL</button>
+          </div> 
+        </div> 
+      </div> 
+      <div id = "informationPowerUps">
+        <h2> Buy your powerups here!!! </h2>
+        <div class = "Box" style = "flex-direction: column;">
+          <h1>MINESWEEPER GAME</h1>
+          <small>You can only use these powerups in the minesweeper game </small> 
+          <div class = "ItemsRows">
+            <div class = "ITEMS">
+              <div class = "controlPanel"> 
+                <div class = "itemDescription">
+                  <h2>5 hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>
+              </div> 
+              <div id = "sudoku5Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_246719e2f9d54f23910c6e204b37aaf4~mv2.jpg" alt = "5Hints"> 
+              </div> 
+            </div> 
+            <div class = "ITEMS">
+              <div class = "controlPanel"> 
+                <div class = "itemDescription">
+                  <h2>10 Hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>
+              </div> 
+              <div id = "sudoku10Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_6cf3ab5fd5e948d0ba639e0b3cb542b9~mv2.jpg" alt = "10Hints">
+              </div> 
+            </div>
+            <div class = "ITEMS"> 
+              <div class = "controlPanel"> 
+                <div class = "itemDescription">
+                  <h2>20 Hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>                
+              </div> 
+              <div id = "sudoku20Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_b23f66deab81470d9e7ba99338f3b452~mv2.jpg" alt = "20Hints">
+              </div> 
+            </div> 
+          </div> 
+          <br> 
+          <br>
+          <h1> Sudoku Game </h1> 
+          <small> You can only use these powerups in the Sudoku Game </small>
+          <div class = "ItemsRows">
+            <div class = "ITEMS"> 
+              <div class = "controlPanel">
+                <div class = "itemDescription">
+                  <h2>5 hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>
+              </div> 
+              <div id = "minesweeper5Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_246719e2f9d54f23910c6e204b37aaf4~mv2.jpg" alt = "5Hints"> 
+              </div> 
+            </div> 
+            <div class = "ITEMS"> 
+              <div class = "controlPanel">
+                <div class = "itemDescription">
+                  <h2>10 hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>
+              </div> 
+              <div id = "minesweeper10Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_246719e2f9d54f23910c6e204b37aaf4~mv2.jpg" alt = "5Hints"> 
+              </div> 
+            </div> 
+            <div class = "ITEMS">
+              <div class = "controlPanel">
+                <div class = "itemDescription"> 
+                  <h2>20 hints</h2>
+                </div> 
+                <button type = "button" class = "learnMore">Learn more</button>
+                <button type = "button" class = "purchaseItem">Purchase item</button>
+              </div> 
+              <div id = "minesweeper20Hints">
+                <img src = "https://static.wixstatic.com/media/3e6e93_b23f66deab81470d9e7ba99338f3b452~mv2.jpg" alt = "20Hints">
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <div> 
+
+    </div> 
+    <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100px; background-color: lightgray"> 
+      CSS Validation
+      <p>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                  alt="Valid CSS!" />
+          </a>
+      </p>
+    </div> 
+    <footer>
+      2022. All rights reserved (Under development)
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src = "accountHandling.js"></script> 
+    <script src = "functionality.js"></script>
+    <script src = "gamesPage.js"></script> 
+  </body> 
+</html> 

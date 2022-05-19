@@ -1,0 +1,529 @@
+body {
+  font-family: Varela Round;
+  height: 100%;
+  transition: opacity 1s; 
+}
+
+p {
+  font-weight: bold;
+}
+
+#Base {
+  width: 100%;
+  background-color: lightgray;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*The #InternalHeader div is only used for displaying information such as the amount of time used. */
+#InternalHeader {
+  width: 100%;
+  height: 100px; 
+  background-color: ghostwhite;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+}
+
+#TimerDivider{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33.33333333%;
+  height: 100%;
+}
+
+#TimerBox {
+  border-radius: 5px;
+  background-color: black; 
+  width: 100%;
+  height: 50%;
+  color: white; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#startTimer {
+  background-color: green;
+  color: white; 
+  border-style: solid;
+  border-radius: 5px;
+  transition: background-color 1s, color 1s; 
+}
+
+#startTimer:hover{
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+
+#pauseGame { 
+  background-color: darkred;
+  color: white;
+  border-radius: 5px;
+  border-style: solid;
+  transition: background-color 1s, color 1s; 
+}
+
+#pauseGame:hover {
+  background-color: white;
+  color: darkred;
+  cursor: pointer;
+}
+
+table, tr, td {
+  border-style: solid;
+}
+
+table {
+  background-color: white;
+  border-width: 1px;
+}
+
+/*All covering should have the same width and height with every td element*/
+td, .covering {
+  border-width: 2px;
+  width: 10px;
+  height: 70px;
+  border-bottom-color: gray;
+  border-right-color: gray;
+}
+
+.covering {
+  border-width: 0.5px;
+  background-color: blue; 
+}
+
+/*ERROR MESSAGE FOR INSUFFICIENT SCREEN WIDTH*/
+/*webpage display error due to insufficient screen width*/
+#InsufficientWidthError {
+  display: none; 
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  overflow-y: scroll;
+}
+
+#TipBox {
+  width: 100%;
+  height: 300px;
+  background-color: lightgreen;
+  color: green;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#smallNavBar {
+  background-color: gainsboro; 
+  width: 100%;
+  height: 50px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#QuitGameDueToInsufficientWidth{
+  width: 150px;
+  height: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+#HelpButtonDueToInsufficientWidth{
+  width: 150px;
+  height: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  transition: background-color 1s, color 1s; 
+} 
+
+/*Landing page*/
+.BaseBlack, .noHintsSelectedConfirmation, #Backing, #powerUpsShopMinesweeper, #signOnError, #max, .minesweeperPowerUpShop, #BACKGROUNDTRANSACTION {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgb(0, 0, 0, 0.75); 
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  transition: background-color 1s; 
+}
+
+#BACKGROUNDTRANSACTION {
+  z-index: 8;
+  display: none;
+  align-items: center;
+}
+
+.minesweeperPowerUpShop{
+  display: none;
+  z-index: 7;
+  align-items: center;
+}
+
+#max{
+  background-color: transparent;
+  display: none;
+  z-index: 6;
+  height: 15%;
+}
+
+#signOnError{
+  display: none;
+  z-index: 5;
+}
+
+#powerUpsShopMinesweeper {
+  align-items: center;
+  display: none;
+  z-index: 4; 
+}
+
+#Backing {
+  display: none;
+  z-index: 3;
+}
+
+.noHintsSelectedConfirmation{
+  display: none;
+  z-index: 2;
+}
+
+/*Set background to white color*/
+.interface, #notice, #loader, #hints, #message, #error, .item, #center{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 1s;
+}
+
+/*info*/ 
+#center{
+  height: 50%;
+}
+
+.controls{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pointsRequired{
+  background-color: green;
+  width: 30%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: lightgreen;
+}
+
+.item {
+  width: 100%;
+  height: 50%;
+}
+
+#goBack:hover{
+  cursor: pointer;
+  color: orange;
+}
+
+#error{
+  height: 50%;
+  width: 40%;
+  transition: height 1s, opacity 1s; 
+}
+
+#hints {
+  width: 100%;
+  height: 75%;
+}
+
+#Controls{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+}
+
+.rows{
+  width: 100%;
+  height: 250px;
+  display: flex;
+}
+
+.element {
+  width: 33.333333333333%;
+  height: 100%;
+  border-style: solid;
+  flex-direction: column;
+}
+
+#Minesweeper5Hints, #Minesweeper10Hints, #Minesweeper20Hints{
+  width: 100%;
+  height: 70%;
+  border-style: solid;
+}
+
+.getItem{
+  background-color: green;
+  color: lightgreen;
+  height: 100%;
+  width: 30%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.decide {
+  display: flex;
+  width: 100%;
+  height: 28%;
+}
+
+#decision {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  width: 100%;
+}
+
+#yes, #no {
+  width: 50%;
+  height: 100%; 
+}
+
+#proceed {
+  background-color: green;
+  color: lightgreen;
+  width: 30%;
+  height: 75px;
+  border-style: solid;
+  border-radius: 5px;
+  transition: background-color 1s, color 1s;
+}
+
+#BEGIN:hover{
+  background-color: lightgreen;
+  color: green;
+  cursor: pointer;
+}
+
+#block {
+  display: flex;
+  width: 300px;
+  height: 100px;
+  border-style: solid;
+}
+
+/*Where the number will be displayed*/ 
+#numSpace {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/*control space*/ 
+#controls{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controlType {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+#numberOfHintsThatTheUserPossessCurrently{
+  width: 100%;
+  height: 150px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  height: 100px; 
+  width: 100%;
+  display: flex;
+}
+
+#decrease {
+  background-color: red;
+  color: white;
+}
+
+#increase {
+  background-color: green;
+  color: white;
+}
+
+#decrease:hover, #increase:hover{
+  cursor: pointer;
+}
+
+
+/*MEDIA QUERIES TO ENSURE NO DISTORTION*/
+/*FOR MOBILE PHONE*/
+/*display an error message if there is insufficient screen width*/
+@media (max-width: 400px){
+  body {
+    display: none;
+  }
+
+  /*This is the base element for the */ 
+  #InsufficientWidthError {
+    display: block;
+  }
+}
+
+/**/ 
+#user {
+  width: 40%;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+
+/*for tablet computer and mobile phone screens.*/ 
+@media (max-width: 1000px){
+  footer {
+    font-size: 10px;
+  }
+
+  td {
+    height: 25px;
+    width: 50px;
+    border-width: 1px;
+    font-size: 10px;
+  }
+
+  #Base {
+    height: 1000px;
+  }
+
+  #adjust {
+    font-size: 15px;
+  }
+
+  #arrangement {
+    display: flex;
+    flex-direction: column;
+    width: 15%; 
+  }
+
+  button#startTimer, button#pauseGame{
+    font-size: 10px;
+    width: 100%;
+    height: 50%;
+  }
+}
+
+/*for laptop screens max 16-inch*/ 
+@media (min-width: 1540px){
+  td {
+    height: 30px;
+  }
+}
+
+@media (max-width: 1400px){
+  .interface{
+    width: 75%;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+#covering {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  position: absolute;
+}
+
+.howManyPointsDoIHave{
+  width: 30%;
+  height: 100px;
+  background-color: red;
+  color: white; 
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+}
+
+.identifier {
+  height: 10%;
+  width: 100%;
+}
+
+.points{
+  font-size: 45px;
+}
+
+.details{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+}
+
+/*Button styling*/
+.purchaseItemInGame{
+  border-style: solid;
+  border-radius: 5px;
+  background-color: green;
+  color: yellow;
+  width: 10%;
+  height: 50px;
+}

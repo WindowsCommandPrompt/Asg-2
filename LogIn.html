@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang = "EN-US"> 
+  <head>
+    <meta charset = "UTF-8"> 
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href = "loginBox.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "normalise.css" type = "text/css" rel = "stylesheet"> 
+    <title> My Repl </title> 
+  </head> 
+  <body> 
+    <!--IF THE PERSON TRIES TO LOGIN AGAIN--> 
+    <div class = "loginCard"> 
+      <i class = "material-icons" style = "font-size: 50px; position: relative" id = "color">exit_to_app</i>
+      <div class = "formCluster"> 
+        <h3> One account. All of ZY Games</h3> 
+        <div class = "loginField"> 
+          <label> Username: </label>  
+          <input type = "text" placeholder = "Username" required id = "usernameInput">
+        </div> 
+        <div class = "loginField">
+          <label> Password: </label>
+          <input type = "text" placeholder = "Password" required id = "passwordInput">
+        </div> 
+        <br> 
+        <br> 
+        <div class = "formControls"> 
+          <button type = "reset" id = "resetButton">Reset All</button>
+          <button type = "button" id = "logInButton">Log In </button> 
+        </div> 
+      </div> 
+      <br> 
+      <br> 
+      <button type = "button" id = "CreateNewAccount">New user? Create a new account here.</button> 
+    </div>
+    <div class = "main"> 
+      <div id = "infoBar">
+        <div id = "enclosing"> 
+          <div class = "circle">
+            <i class = "material-icons" style = "font-size: 50px; color: white" id = "help">help_outline</i>
+          </div> 
+          <div class = "circle">
+            <i class = "material-icons" style = "font-size: 50px; color: white" id = "settings">settings</i>
+          </div> 
+        </div> 
+      </div> 
+      <footer>
+        2022 All Rights Reserved (Under development)
+      </footer> 
+    </div> 
+    <!--Import jquery library--> 
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script> 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!--Your own javascript file-->  
+    <script src = "loginInformation.js"></script>
+  </body> 
+</html> 

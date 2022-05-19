@@ -1,0 +1,234 @@
+<!DOCTYPE html> 
+<html lang = "EN-US"> 
+  <head> 
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href = "mainPage.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link href = "normalise.css" rel = "stylesheet" type = "text/css"> 
+    <!--Use another <link> tag--> 
+    <title> My Website </title> 
+  </head> 
+  <body> 
+    <!--Prompt the user if the user would want to change his or her password or username-->
+    <div class = "positionToFixedDisplayToNone">
+      <div id = "editAccount">
+        <h1>Change password AND/OR username</h1>
+        <small>The process is very simple. Just follow the steps below.</small>
+        <br> 
+        <br> 
+        <div id = "fitCenter"> 
+          <div class = "loginCard"> 
+            <i class = "material-icons" style = "font-size: 50px; position: relative" id = "color">exit_to_app</i>
+            <div class = "formCluster"> 
+              <h3> One account. All of ZY Games</h3> 
+              <div class = "loginField"> 
+                <label> Username: </label>  
+                <input type = "text" placeholder = "Username" required id = "usernameInput">
+              </div> 
+              <div class = "loginField">
+                <label> Password: </label>
+                <input type = "text" placeholder = "Password" required id = "passwordInput">
+              </div> 
+              <br> 
+              <br> 
+              <div class = "formControls"> 
+                <button type = "reset" id = "resetButton">Reset All</button>
+                <button type = "button" id = "logInButton">Log In </button> 
+              </div> 
+            </div> 
+            <br> 
+            <br> 
+            <button type = "button" id = "CreateNewAccount">New user? Create a new account here.</button> 
+          </div>
+        </div> 
+      </div> 
+    </div>
+    <!--Prompt end--> 
+    <!--The main backbone of the creation page--> 
+    <header>
+      image 
+      <nav> 
+        <div class = "navElement">
+          Home
+        </div> 
+        <div class = "navElement"> 
+          Games
+        </div> 
+        <div class = "navElement"> 
+          Inventory  
+        </div> 
+      </nav> 
+      <!--UserAccountControls--> 
+      <div id = "UserAccountControls"> 
+        <div class = "red">
+          Logout 
+        </div> 
+        <div class = "blue">
+          Edit account 
+        </div> 
+      </div> 
+      <button type = "button" id = "LoginRedirect">Log in</button> 
+    </header> 
+    <!--New nav bar--> 
+    <div id = "newNavBar">
+      <i class = "material-icons" style = "font-size: 50px;" id = "openMenu">menu</i> 
+    </div>  
+    <!--Opened menu--> 
+    <div id = "contents"> 
+      <div id = "internalText"> 
+        <i class = "material-icons" style = "font-size: 50px" id = "closeMenu">close</i>
+        <div id = "signInStatus"> 
+          <div id = "frame"> 
+            <i class = "material-icons" style = "font-size: 50px">person</i>
+          </div> 
+          <div id = "AccountControls"> 
+            <p id = "textSize">Not signed in</p>
+            <div id = "internalAccountControls"> 
+              <i class = "material-icons" style = "font-size: 50px" id = "asideLoginButton">login</i>
+            </div> 
+          </div> 
+        </div> 
+        <!--SignInStatus end--> 
+        <div id = "toHomePage">
+          Home Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div> 
+        <div id = "toRewardsPage">
+          Rewards Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div>
+        <div id = "toGamesPage">
+          Games Page
+          <i class = "material-icons go" style = "font-size: 70px">arrow_forward</i>
+        </div>  
+      </div> 
+    </div> 
+    <div id = "warningMessage">
+      <i class = "material-icons">warning</i>
+      WARNING! Please view these pages in Chrome or Microsoft Edge only
+    </div> 
+    <!--<span></span> is where a text will be inserted via javascript --> 
+    <div id = "covering"> 
+      <div id = "welcomeMessage">
+        <h1 id = "welcomeText"> Welcome <span id = "newText"></span></h1> 
+      </div> 
+    </div> 
+    <div id = "mainContainer"> 
+      <div id = "container1">
+        <div id = "contactMethod1">
+          <a href = "https://Contact-Card.masterzy1234.repl.co" onclick = "return ConfirmationRedirectContactPage()"><img src = "https://cdn.icon-icons.com/icons2/2428/PNG/512/whatsapp_black_logo_icon_147050.png" alt = "WA" class = "ImageFormattingNew"></a>
+        </div> 
+        <div id = "contactMethod2">
+          <a href = "#" onclick = "return ConfirmationRedirectLinkedInProfile()"><img src = "https://cdn.icon-icons.com/icons2/2428/PNG/512/linkedin_black_logo_icon_147114.png" alt = "LinkedIn Profile" class = "ImageFormattingNew"></a>
+        </div>
+        <div id = "contactMethod3">
+          <a href = "https://Contact-Card.masterzy1234.repl.co#IG" onclick = "return ConfirmationRedirectIGProfile()"><img src = "https://cdn.icon-icons.com/icons2/2428/PNG/512/instagram_black_logo_icon_147122.png" alt = "IG Profile" class = "ImageFormattingNew"></a>
+        </div> 
+      </div> 
+      <div id = "container2">
+        <div id = "info"> 
+          <!--Insert sub containers--> 
+          <div id = "whatsNew">
+            <h1><u> What's new v.2.0</u></h1> 
+            <br> 
+            <br> 
+            Newly designed website. All new look 
+          </div> 
+          <div id = "slideShow"> 
+            <div id = "ImageContainer">
+              <div class = "TranslucentBlackColorBase"> 
+          
+              </div> 
+            </div> 
+          </div> 
+          <div id = "Leaderboard">
+            <h1> Leaderboard (Congratulations to the top 5 players!) </h1> 
+            <div id = "bounding"> 
+            <!--Stores results FRESH FROM API EVERY HALF AN HOUR--> 
+              <table>
+                <tr>
+                  <th> ID </th>
+                  <th> Player Name </th>
+                  <th> Player Points Earned </th> 
+                </tr>
+                <!--1, 2, 4, 5, 7, 8, 10, 11, 13, 14-->
+                <tr>
+                  <td style = "font-weight: bold"> 1</td>
+                  <td> </td> 
+                  <td> </td> 
+                </tr> 
+                <tr>
+                  <td style = "font-weight: bold"> 2</td> 
+                  <td> </td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td style = "font-weight: bold"> 3</td>
+                  <td> </td>
+                  <td> </td> 
+                </tr>
+                <tr>
+                  <td style = "font-weight: bold"> 4</td>
+                  <td> </td>
+                  <td> </td> 
+                </tr>
+                <tr> 
+                  <td style = "font-weight: bold"> 5</td>
+                  <td> </td>
+                  <td> </td> 
+                </tr>
+              </table> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <section> 
+      <div style = "display: flex; flex-direction: row; width: 100%; height: 100%"> 
+        s
+        <div id = "msg">
+          <div> 
+            <h1>CONTACT</h1> 
+          </div>
+          <div>
+            <h1>US</h1>
+          </div>
+          <div>
+            <h1>TODAY</h1>
+          </div> 
+        </div> 
+        <form>
+          <!--Not using bootstrap here LOL--> 
+          <div class = "formCluster">
+          </div> 
+        </form> 
+      </div> 
+    </section> 
+    <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100px; background-color: lightgray"> 
+      CSS Validation
+      <p>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                  alt="Valid CSS!" />
+          </a>
+      </p>
+    </div> 
+    <footer>
+      2022. All Rights Reserved. (Under development)
+    </footer>
+    <!--Import jquery library--> 
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!--Personal javascript files--> 
+    <script src = "accountHandling.js"></script> 
+    <script src = "functionality.js"></script>
+    <script src = "wordAnimation.js"></script> 
+    <script src = "loginInformation.js"></script> 
+    <script src = "gamesPage.js"></script>
+  </body> 
+</html> 

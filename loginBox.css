@@ -1,0 +1,153 @@
+/*Apply the relevant font to the login page*/
+body {
+  font-family: Varela Round; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(45deg, lightblue, white, lightblue);
+  transition: opacity 1s;
+}
+
+/*media query for the body element*/
+@media (min-width: 500px){
+  body{
+    height: 929px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#infoBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+}
+
+#enclosing{
+  display: flex;
+  width: 10%;
+  justify-content: space-between;
+}
+
+.circle{
+  background-color: black;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px; 
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#color{
+  transition: color 1s;
+}
+
+#color:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+#help:hover{
+  cursor: pointer;
+}
+
+#settings:hover{
+  cursor: pointer;
+}
+
+#back:hover{
+  color: orange;
+  cursor: pointer;
+}
+
+i {
+  width: 10%;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 100px;
+}
+
+.loginCard{
+  width: 400px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.loginField {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 30px;
+}
+
+#CreateNewAccount{
+  background-color: blue;
+  color: white; 
+  border-style: solid;
+  border-radius: 5px;
+  transition: background-color 1s, color 1s; 
+}
+
+#CreateNewAccount:hover{
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+}
+
+.formControls {
+  display: flex
+}
+
+#resetButton, #logInButton {
+  width: 50%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#resetButton{
+  background-color: red;
+  color: white;
+  transition: background-color 1s, color 1s; 
+}
+
+#resetButton:hover{
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}
+
+#logInButton{
+  background-color: green;
+  color: white;
+  transition: background-color 1s, color 1s; 
+}
+
+#logInButton:hover{
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}

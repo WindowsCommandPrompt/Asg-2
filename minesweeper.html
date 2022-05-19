@@ -1,0 +1,770 @@
+<!DOCTYPE html> 
+<html lang = "en"> 
+  <head> 
+    <meta charset = "UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href = "minesweeper.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link href = "normalise.css" rel = "stylesheet" type = "text/css">
+    <title> Minesweeper </title> 
+  </head> 
+  <body>
+    <!--loading animation-->
+    <div id = "BACKGROUNDTRANSACTION"> 
+      <div id = "center"> 
+        <lottie-player src="https://assets5.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay id = "confirmingTransaction"></lottie-player>
+        <p id = "successful">SUCCESSFUL</p>
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_3juvcrdk.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  autoplay id = "transactionCompleted"></lottie-player>
+      </div> 
+    </div> 
+    <!--Shop--> 
+    <div class = "minesweeperPowerUpShop">
+      <div class = "item">
+        <div class = "controls"> 
+          <i class = "material-icons" id = "closeFirst" style = "font-size: 75px">close</i>
+        </div> 
+        <div class = "details"> 
+          <h2> 5 Minesweeper hints </h2> 
+          <div class = "howManyPointsDoIHave"> 
+            <div class = "identifier"> 
+              You have: 
+            </div> 
+            <span class = "points">
+              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ObshHL.json"  background="transparent"  speed="1"  style="width: 250px; height: 250px;"  loop  autoplay></lottie-player>
+            </span> 
+          </div> 
+          <div class = "pointsRequired"> 
+            <h2>195 points</h2>
+          </div> 
+          <br>
+          <br>
+          <button type = "button" class = "purchaseItemInGame">BUY ITEM</button> 
+        </div> 
+      </div> 
+    </div> 
+    <div class = "minesweeperPowerUpShop"> 
+      <div class = "item"> 
+        <div class = "controls"> 
+          <i class = "material-icons" id = "closeSecond" style = "font-size: 75px">close</i>
+        </div> 
+        <div class = "details">
+          <h2> 10 Minesweeper hints </h2> 
+          <div class = "howManyPointsDoIHave"> 
+            <div class = "identifier"> 
+              You have: 
+            </div> 
+            <span class = "points">
+              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ObshHL.json"  background="transparent"  speed="1"  style="width: 250px; height: 250px;"  loop  autoplay></lottie-player>
+            </span>
+          </div> 
+          <div class = "pointsRequired"> 
+            <h2>290 points</h2>
+          </div> 
+          <br>
+          <br>
+          <div class = ""> 
+            <button type = "button" class = "purchaseItemInGame">BUY ITEM</button> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <div class = "minesweeperPowerUpShop">
+      <div class = "item"> 
+        <div class = "controls"> 
+          <i class = "material-icons" id = "closeThird" style = "font-size: 75px">close</i>
+        </div> 
+        <div class = "details"> 
+          <h2> 20 Minesweeper hints </h2> 
+          <div class = "howManyPointsDoIHave"> 
+            <div class = "identifier"> 
+              You have: 
+            </div> 
+            <span class = "points">
+              <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ObshHL.json"  background="transparent"  speed="1"  style="width: 250px; height: 250px;"  loop  autoplay></lottie-player>
+            </span> 
+          </div> 
+          <div class = "pointsRequired">
+            <h2>570 points</h2> 
+          </div> 
+          <br>
+          <br>
+          <button type = "button" class = "purchaseItemInGame">BUY ITEM</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--Each game only allows 40 hints--> 
+    <div id = "max">
+      <div id = "error"> 
+        <h4>You can only use a maximum of 40 hints per game session</h4>
+      </div> 
+    </div> 
+    <div id = "signOnError">
+      <div id = "message">
+        <h2>Something went wrong. Please try refreshing to page.</h2> 
+      </div> 
+    </div> 
+    <!--just a power up shop in the Minesweeper game. LOL--> 
+    <div id = "powerUpsShopMinesweeper"> 
+      <div id = "hints"> 
+        <div id = "Controls"> 
+          <i class = "material-icons" id = "closeHintShop" style = "font-size: 50px;">close</i> 
+        </div> 
+        <br>
+        <br> 
+        <h2> Buy additional powerups today! </h2>
+        <div class = "rows"> 
+          <div class = "element">
+            <div id = "Minesweeper5Hints"> 
+              <img src = "https://static.wixstatic.com/media/3e6e93_246719e2f9d54f23910c6e204b37aaf4~mv2.jpg" alt = "Minesweeper5Hints">
+            </div> 
+            <div class = "decide"> 
+              <button type = "button" class = "getItem">Purchase</button> 
+            </div> 
+          </div> 
+          <div class = "element"> 
+            <div id = "Minesweeper10Hints">
+              <img src = "https://static.wixstatic.com/media/3e6e93_b23f66deab81470d9e7ba99338f3b452~mv2.jpg" alt = "Minesweeper10Hints"> 
+            </div> 
+            <div class = "decide"> 
+              <button type = "button" class = "getItem">Purchase</button> 
+            </div> 
+          </div> 
+          <div class = "element"> 
+            <div id = "Minesweeper20Hints">
+              <img src = "https://static.wixstatic.com/media/3e6e93_b23f66deab81470d9e7ba99338f3b452~mv2.jpg" alt = "Minesweeper20Hints"> 
+            </div> 
+            <div class = "decide"> 
+              <button type = "button" class = "getItem">Purchase</button> 
+            </div>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <!--Display a loading message-->
+    <div id = "Backing"> 
+      <div id = "loader">
+        <h2>Please wait....</h2>
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_2svadkl0.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+      </div> 
+    </div> 
+    <!--end-->  
+    <div class = "noHintsSelectedConfirmation">
+      <div id = "notice">
+        <h2> It seems you have not brought along any power-ups with you! </h2>
+        <h3> Are you sure you want to continue? </h3> 
+        <div id = "decision"> 
+          <button type = "button" id = "yes">Yes</button> 
+          <button type = "button" id = "no">No</button> 
+        </div> 
+      </div> 
+    </div> 
+    <!--end-->
+    <!--Let the player choose the difficulty level--> 
+    <div class = "BaseBlack"> 
+      <!--Check the username. The default value for this field should be "Not signed in"--> 
+      <div class = "interface">
+        <div id = "container"> 
+          <i class = "material-icons" id = "goBack" style = "font-size: 75px;">arrow_back</i> 
+        </div> 
+        <div id = "user"> 
+          <p id = "username">Signed in as: <span id = "whoami"></span></p>
+          <p id = "default">Not signed in</p>
+        </div> 
+        <h2>Click on the button below to begin</h2>
+        <button type = "button" id = "proceed">BEGIN</button>
+        <br>
+        <br>
+        <div id = "numberOfHintsThatTheUserPossessCurrently">
+          <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" id = "aLottiePlayerDealWithIt" loop  autoplay></lottie-player>
+          <span id = "numberOfMinesweeperHints" style = "font-size: 30px;"></span> 
+          <p id = "someMessage">You are not signed in. In-game purchases is currently disabled</p>
+        </div> 
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_2svadkl0.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay id = "verifyLogIn"></lottie-player>
+        <br>
+        <br>
+        <button type = "button" id = "signIn">SIGN IN</button> 
+        <br>
+        <br>
+        <small> You can choose how many hints you would like to use later on during the game </small>
+        <div id = "block">
+          <div id = "numSpace"> 
+            0
+          </div> 
+          <div id= "controls"> 
+            <div class = "controlType"> 
+              <i class = "material-icons" id = "increase">arrow_upward</i>
+            </div> 
+            <div class = "controlType"> 
+              <i class = "material-icons" id = "decrease">arrow_downward</i>
+            </div> 
+          </div> 
+        </div> 
+        <br>
+        <br>
+        <button type = "button" id = "purchaseMoreMinesweeperHints">Purchase more hints from the shop</button> 
+      </div> 
+    </div> 
+    <!--IF THE SCREEN WIDTH IS TOO NARROW FOR THE DESKTOP PAGE--> 
+    <div id = "InsufficientWidthError"> 
+      <div id = "smallNavBar">
+        <div style = "display: flex; justify-content: center; align-items: center;"> 
+          <button type = "button" id = "QuitGameDueToInsufficientWidth">QUIT THIS GAME</button> 
+        </div> 
+        <div style = "display: flex; justify-content: center; align-items: center;"> 
+          <button type = "button" id = "HelpButtonDueToInsufficientWidth">HELP</button>
+        </div> 
+      </div>
+      Sorry, your screen is not wide enough to use the desktop version of this game.
+      <br> 
+      <br> 
+      <div id = "TipBox"> 
+        Are you trying to access this page on a mobile device? Don't worry. You can still play this game on any device. Just simply rotate your device to landscape mode.  
+        <h2 id = "viewportWidthIndicator">Your current viewport width is: </h2>
+        <br>
+        <h2 id = "viewportHeightIndicator">Your current viewport height is: </h2> 
+        You need to have at least 1000px worth of viewport width to play this game, and at least 200px of viewport height.
+      </div> 
+    </div>
+    <div id = "Base"> 
+      <div id = "InternalHeader"> 
+        <div id = "TimerDivider"> 
+          <b> Time taken </b> 
+          <div id = "TimerBox"> 
+            00: 00: 00
+          </div> 
+        </div> 
+        <div id = "arrangement">
+          <button type = "button" id = "startTimer"> START TIMER TO BEGIN </button>
+          <button type = "button" id = "pauseGame"> PAUSE THE GAME </button> 
+        </div> 
+        <button type = "button"> QUIT GAME </button>
+      </div> 
+      <h1 id = "adjust"><u> THE ULTIMATE MINESWEEPER </u></h1> 
+      <table> 
+        <tr> 
+          <td> </td>  
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>  
+          <td> </td>
+          <td> </td>
+          <td> </td>                                                          
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>                                                                      <td> </td>                                          
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>                                                            
+        </tr> 
+        <tr>
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>                   
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>
+          <td> </td>
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td>
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+        <tr> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+          <td> </td> 
+        </tr> 
+      </table> 
+      <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightgray">
+        <p> CSS VALIDATION </p>  
+        <p class = "CSSValidationImage">
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                  alt="Valid CSS!" />
+          </a>
+        </p>
+      </div> 
+      <footer> 
+        2022 All Rights Reserved (Under development)
+      </footer> 
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-
+9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src = "timer.js"></script> 
+    <script src = "minesweeperFunctionality.js"></script> 
+  </body> 
+</html> 

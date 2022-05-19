@@ -1,0 +1,556 @@
+html, body{
+  font-family: Varela  Round, sans-serif; 
+  height: 100%;
+  overflow-anchor: none;
+  transition: opacity 1s;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#LoginRedirect{
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  border-style: solid;
+  transition: background-color 1s, color 1s;
+}
+
+#LoginRedirect:hover{
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+}
+
+header {
+  width: 100%; 
+  height: 50px;
+  background-image: linear-gradient(180deg, white, lightblue); 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+nav{
+  background-image: linear-gradient(180deg, white, orange); 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.navElement{
+  width: 33.33333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navElement:hover {
+  background-image: linear-gradient(-180deg, white, green); 
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+}
+
+/*Main area*/
+#mainContainer {
+  display: flex;
+  height: 1500px; 
+  position: relative;
+}
+
+/*This is where all the contact panel will go*/ 
+#container1 {
+  width: 90px;
+  height: 160px; 
+  display: flex;
+  flex-direction: column;
+  z-index: 8;
+}
+
+#contactMethod1 {
+  background-color: lightgreen; 
+  width: 100%;
+  height: 33.3333333%;
+  transition: width 1s, height 1s;
+}
+
+#contactMethod2 {
+  background-color: yellowgreen;
+  width: 100%;
+  height: 33.33333333%; 
+  transition: width 1s, height 1s; 
+  display: flex;
+}
+
+#contactMethod3 {
+  background-color: green;
+  width: 100%;
+  height: 33.3333333%; 
+  transition: width 1s, height 1s;
+}
+
+
+/*This is where all the information will go*/ 
+#container2 {
+  width: 100%;
+  height: 700px;
+}
+
+/*Set justify-content to center*/ 
+/*Main container to be marked as #info*/ 
+/*We would want to align the webpage content to the center*/ 
+#info {
+  width: 100%;
+  height: 1500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Sub containers to be inserted into the main container*/
+#whatsNew {
+  background-color: white;
+  width:  100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+} 
+
+#slideShow {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#ImageContainer{
+  height: 100%;
+  width: 50%;
+  background-size: cover;
+  background-image: url("https://static.wixstatic.com/media/3e6e93_28c31da7438d4ffdb2498411dcbc9cea~mv2.jpg"); 
+}
+
+.TranslucentBlackColorBase {
+  background-color: rgba(0, 0, 0, 0.60);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s; 
+}
+
+.positionToFixedDisplayToNone{
+  background-color: rgb(0, 0, 0, 0.60);
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s; 
+  position: fixed;
+  z-index: 9;
+}
+
+/*Prompt the user whether he/she would like to change his or her username and password.*/
+#editAccount{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border-style: solid;
+  border-radius: 5px;
+  transition: opacity 1s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Login card */
+.loginCard{
+  width: 400px;
+  height: 500px;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+}
+
+.loginField {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  font-size: 30px;
+}
+
+#CreateNewAccount{
+  background-color: blue;
+  color: white; 
+  border-style: solid;
+  border-radius: 5px;
+  transition: background-color 1s, color 1s; 
+}
+
+#CreateNewAccount:hover{
+  background-color: white;
+  color: blue;
+  cursor: pointer;
+}
+
+.formControls {
+  display: flex
+}
+
+#resetButton, #logInButton {
+  width: 50%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#resetButton{
+  background-color: red;
+  color: white;
+  transition: background-color 1s, color 1s; 
+}
+
+#resetButton:hover{
+  background-color: white;
+  color: red;
+  cursor: pointer;
+}
+
+#logInButton{
+  background-color: green;
+  color: white;
+  transition: background-color 1s, color 1s; 
+}
+
+#logInButton:hover{
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+
+/*Container for welcome message*/
+#welcomeMessage {
+  background-color: rgb(0, 0, 0, 0.75); 
+  height: 100%;
+  color: white; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Welcome message handling*/
+/*Values have been all initialised*/ 
+#newText{
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+/*Ensure that all the icons are in the correct size and location*/
+.ImageFormattingNew{
+  position: relative;
+  width: 50px;
+  height: 50px;
+} 
+
+/*Create image frame*/ 
+#covering {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://static.wixstatic.com/media/3e6e93_51f6ad46b8024ec7b584d384a4c17720~mv2.jpg"); 
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/*New navigation bar when the width of the entire screen is less than 1000px.*/
+#newNavBar{
+  display: none;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  background-color: white;
+  color: black;
+  z-index: 1;
+}
+
+/*What opens when you click on the menu icon?*/
+#contents{
+  z-index: 2;
+  width: 40%;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  color: black;
+  box-shadow: 3px 3px;
+  display: none;
+  transition: width 1s;
+}
+
+#internalText{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#signInStatus{
+  width: 100%;
+  height: 150px;
+  background-color: gainsboro;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#AccountControls{
+  display: flex;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#internalAccountControls{
+  display: flex;
+  justify-content: space-between;
+}
+
+#textSize {
+  font-size: 40px;
+}
+
+#toRewardsPage, #toGamesPage, #toHomePage {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#toRewardsPage {
+  background-color: red;
+}
+
+#toGamesPage {
+  background-color: lightgreen;
+}
+
+#toHomePage {
+  background-color: lightblue;
+}
+
+/*Format the profile picture icon*/
+#frame{
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+/*Apply media query to ensure that the webpage still displays as intended*/
+@media (max-width: 1000px){
+  header{
+    display: none; 
+  }
+
+  #newNavBar{
+    display: flex;
+  }
+
+  #container1 {
+    display: none;
+  }
+} 
+
+/*Just a footer and nothing special*/ 
+footer{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: black;
+  color: white;
+}
+
+div.Base {
+  border-style: solid;
+  border-radius: 5px;
+  width: 50%;
+  height: auto;
+}
+
+.ImageFormatting {
+  width: 100%;
+  height: auto;
+}
+
+#fitCenter{
+  justify-content: center;
+  align-items: center;
+}
+
+/*UserAccountControls*/
+#UserAccountControls{
+  display: none;
+  flex-direction: column;
+  width: 10%;
+  height: 100px;
+  border-radius: 5px;
+  background-color: white;
+  border-style: solid;
+  z-index: 9999;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 89.5%;
+}
+
+.red{
+  background-color: red;
+  color: white;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.red:hover, .blue:hover{
+  cursor: pointer;
+}
+
+.blue {
+  background-color: blue;
+  color: white; 
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Create a section that the user can use to contact with the developer of this website which is MEEEEEE*/
+section{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+#msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#welcomeText{
+  font-size: 60px;
+}
+
+table {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+}
+
+table, th, tr, td {
+  border-style: solid;
+  border-radius: 5px;
+}
+
+th, tr, td{
+  border-width: 0.5px;
+}
+
+/*Contains a div element to contain a table of leaderboard*/ 
+#Leaderboard {
+  width: 100%;
+  height: 50%;
+  background-color: beige;
+  text-align: center;
+}
+
+/*Container to contain the table*/
+#bounding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#warningMessage{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+/*Do alignments for the form*/
+.formCluster{
+  display: flex;
+  flex-direction: column;
+}
+
+/*Label and the input field must be on the same line. We will use medai queries to ensure that the input field goes into a new line when the width of the viewport is less than 700px;*/
+.inputAlignment{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input, textarea {
+  width: 50%;
+}
+
+#informationSignOnError{
+  width: 50%;
+  height: 50%;
+  background-color: white; 
+  border-style: solid;
+  border-radius: 5px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#SignInConflictBase{
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s; 
+  z-index: 3;
+}
+
+/* PERFORM MEDIA QUERIES to ensure that all the html elements would not look misaligned with decreasing screen widths*/
+
