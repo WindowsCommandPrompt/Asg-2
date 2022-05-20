@@ -1,37 +1,3 @@
-/* 
-var n = [1, 1, 2, 2 ,3 ,4]; 
-var n1 = new Set(); 
-for (let i = 0; i < n.length; i++){
-  n1.add(n[i]); 
-}
-n1.forEach(function(result){
-  console.log(result);
-}); 
-*/ 
-/* 
-var q = document.getElementsByTagName("button")[0]
-var newArr = new Array(); 
-q.addEventListener("click", function(){
-  var randomNumber = Math.round(Math.random(), 0); 
-  if (newArr.length == 0){
-    newArr.push(randomNumber); 
-  }
-  else if (newArr.length == 1){
-    newArr.pop(newArr[0]);
-    newArr.push(randomNumber); 
-  }
-  console.log(newArr);
-}); 
-*/ 
-
-//window.location.href = "https://newGame.masterzy1234.repl.co/newDirectory/sdf.html"
-
-/* 
-const fs = require("fs"); 
-const folderName = "/NewFolder/"
-
-fs.mkdir(folderName);
-*/ 
 jQuery("button#proceed").on("click", function(){
   var seconds = -1;
   var minutes = 0;
