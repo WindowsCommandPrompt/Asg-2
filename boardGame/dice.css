@@ -1,0 +1,89 @@
+#oneDot, #twoDot, #threeDot, #fourDot, #fiveDot, #sixDot{
+  border-style: solid;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.dot {
+  background-color: black; 
+  border-radius: 100%; 
+  width: 15px;
+  height: 15px;
+}
+
+/*oneDot*/ 
+#oneDot {
+  display: none; 
+  align-items: center; 
+}
+
+#oneDotCentralising {
+  display: flex;
+  width: 100%;
+  flex-direction: row; 
+  justify-content: center; 
+}
+
+/*twoDot*/ 
+#twoDot{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.firstrowright {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%; 
+}
+
+.lastrowleft {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%; 
+}
+
+/*threeDots*/ 
+#threeDot{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.secondrowcenter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%; 
+}
+
+/*fourDots*/ 
+#fourDot{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.firstrowleftright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+/*fiveDots*/
+#fiveDot{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+/*sixDots*/ 
+#sixDot{
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+

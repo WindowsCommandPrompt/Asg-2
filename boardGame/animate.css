@@ -1,0 +1,1713 @@
+/*FLIP THE CARD OVER*/
+#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9, #card10, #card11, #card12, #card13, #card14, #card15, #card16, #card17, #card18, #card19, #card20, #card21, #card22, #card23, #card24, #card25, #card26, #card27, #card28, #card29, #card30, #card31, #card32, #card33, #card34, #card35, #card36, #card37, #card38, #card39, #card40, #card41, #card42, #card43, #card44, #card45, #card46, #card47, #card48, #card49, #card50, #card51, #card52, #card53, #card54, #card55, #card56, #card57, #card58, #card59, #card60, #card61, #card62, #card63, #card64, #card65, #card66, #card67, #card68, #card69, #card70, #card71,#card72, #card73, #card74, #card75, #card76, #card77, #card78, #card79, #card80, #card81,#card82, #card83, #card84, #card85, #card86, #card87, #card88, #card89, #card90, #card91,#card92, #card93, #card94, #card95, #card96, #card97, #card98, #card99, #card100, #card101,#card102, #card103, #card104, #card105, #card106, #card107, #card108, #card109, #card110, #card111,#card112, #card113, #card114, #card115, #card116, #card117, #card118, #card119, #card120, #card121,#card122, #card123, #card124, #card125, #card126, #card127, #card128, #card129, #card130, #card131,#card132, #card133, #card134, #card135, #card136, #card137, #card138, #card139, #card140, #card141, #card142, #card143, #card144, #card145, #card146, #card147, #card148, #card149, #card150, #card151, #card152, #card153, #card154, #card155, #card156, #card157, #card158, #card159, #card160, #card161, #card162, #card163, #card164, #card165, #card166, #card167, #card168, #card169{
+  animation-duration: 10s;
+  animation-iteration-count: infinite; /*declare a css variable change from infinite to 1*/ 
+  animation-direction: alternate; 
+} 
+
+#card1 {
+  animation-name: card1;
+}
+
+/*Increase animation-delay by 0.05 seconds*/
+
+#card2 {
+  animation-name: card2;
+  animation-delay: 0.25s
+}
+
+#card3 {
+  animation-name: card3; 
+  animation-delay: 0.30s; 
+}
+
+#card4 {
+  animation-name: card4; 
+  animation-delay: 0.35s; 
+}
+
+#card5 {
+  animation-name: card5; 
+  animation-delay: 0.40s; 
+}
+
+#card6 {
+  animation-name: card6; 
+  animation-delay: 0.45s; 
+}
+
+#card7 {
+  animation-name: card7; 
+  animation-delay: 0.50s; 
+}
+
+#card8 {
+  animation-name: card8; 
+  animation-delay: 0.55s; 
+}
+
+#card9 {
+  animation-name: card9; 
+  animation-delay: 0.60s; 
+}
+
+#card10 {
+  animation-name: card10; 
+  animation-delay: 0.65s; 
+}
+
+#card11 {
+  animation-name: card11; 
+  animation-delay: 0.70s; 
+}
+
+#card12 {
+  animation-name: card12; 
+  animation-delay: 0.75s; 
+}
+
+#card13 {
+  animation-name: card13; 
+  animation-delay: 0.80s; 
+}
+
+#card14 {
+  animation-name: card14; 
+  animation-delay: 0.85s; 
+}
+
+#card15 {
+  animation-name: card15; 
+  animation-delay: 0.90s; 
+}
+
+#card16 {
+  animation-name: card16; 
+  animation-delay: 0.95s; 
+}
+
+#card17 {
+  animation-name: card17; 
+  animation-delay: 1.00s; 
+}
+
+#card18 {
+  animation-name: card18; 
+  animation-delay: 1.05s; 
+}
+
+#card19 {
+  animation-name: card19; 
+  animation-delay: 1.10s; 
+}
+
+#card20 {
+  animation-name: card20; 
+  animation-delay: 1.15s; 
+}
+
+#card21 {
+  animation-name: card21; 
+  animation-delay: 1.20s; 
+}
+
+#card22 {
+  animation-name: card22; 
+  animation-delay: 1.25s; 
+}
+
+#card23 {
+  animation-name: card23; 
+  animation-delay: 1.30s; 
+}
+
+#card24 {
+  animation-name: card24; 
+  animation-delay: 1.35s; 
+}
+
+#card25 {
+  animation-name: card25; 
+  animation-delay: 1.40s; 
+}
+
+#card26 {
+  animation-name: card26; 
+  animation-delay: 1.45s; 
+}
+
+#card27 {
+  animation-name: card27; 
+  animation-delay: 1.50s; 
+}
+
+#card28 {
+  animation-name: card28; 
+  animation-delay: 1.55s; 
+}
+
+#card29 {
+  animation-name: card29; 
+  animation-delay: 1.60s; 
+}
+
+#card30 {
+  animation-name: card30; 
+  animation-delay: 1.65s; 
+}
+
+#card31 {
+  animation-name: card31; 
+  animation-delay: 1.70s; 
+}
+
+#card32 {
+  animation-name: card32; 
+  animation-delay: 1.75s; 
+}
+
+#card33 {
+  animation-name: card33; 
+  animation-delay: 1.80s; 
+}
+
+#card34 {
+  animation-name: card34; 
+  animation-delay: 1.85s; 
+}
+
+#card35 {
+  animation-name: card35; 
+  animation-delay: 1.90s; 
+}
+
+#card36 {
+  animation-name: card36; 
+  animation-delay: 1.95s; 
+}
+
+#card37 {
+  animation-name: card37; 
+  animation-delay: 2.00s; 
+}
+
+#card38 {
+  animation-name: card38; 
+  animation-delay: 2.05s; 
+}
+
+#card39 {
+  animation-name: card39; 
+  animation-delay: 2.10s; 
+}
+
+#card40 {
+  animation-name: card40; 
+  animation-delay: 2.15s; 
+}
+
+#card41 {
+  animation-name: card41; 
+  animation-delay: 2.20s; 
+}
+
+#card42 {
+  animation-name: card42; 
+  animation-delay: 2.25s; 
+}
+
+#card43 {
+  animation-name: card43; 
+  animation-delay: 2.30s; 
+}
+
+#card44 {
+  animation-name: card44; 
+  animation-delay: 2.35s; 
+}
+
+#card45 {
+  animation-name: card45; 
+  animation-delay: 2.40s; 
+}
+
+#card46 {
+  animation-name: card46; 
+  animation-delay: 2.45s; 
+}
+
+#card47 {
+  animation-name: card47; 
+  animation-delay: 2.50s; 
+}
+
+#card48 {
+  animation-name: card48; 
+  animation-delay: 2.55s; 
+}
+
+#card49 {
+  animation-name: card49; 
+  animation-delay: 2.60s; 
+}
+
+#card50 {
+  animation-name: card50; 
+  animation-delay: 2.65s; 
+}
+
+#card51 {
+  animation-name: card51; 
+  animation-delay: 2.70s; 
+}
+
+#card52 {
+  animation-name: card52; 
+  animation-delay: 2.75s; 
+}
+
+#card53 {
+  animation-name: card53; 
+  animation-delay: 2.80s; 
+}
+
+#card54 {
+  animation-name: card54; 
+  animation-delay: 2.85s; 
+}
+
+#card55 {
+  animation-name: card55; 
+  animation-delay: 2.90s; 
+}
+
+#card56 {
+  animation-name: card56; 
+  animation-delay: 2.95s; 
+}
+
+#card57 {
+  animation-name: card57; 
+  animation-delay: 3.00s; 
+}
+
+#card58 {
+  animation-name: card58; 
+  animation-delay: 3.05s; 
+}
+
+#card59 {
+  animation-name: card59; 
+  animation-delay: 3.10s; 
+}
+
+#card60 {
+  animation-name: card60; 
+  animation-delay: 3.15s; 
+}
+
+#card61 {
+  animation-name: card61; 
+  animation-delay: 3.20s; 
+}
+
+#card62 {
+  animation-name: card62; 
+  animation-delay: 3.25s; 
+}
+
+#card63 {
+  animation-name: card63; 
+  animation-delay: 3.30s; 
+}
+
+#card64 {
+  animation-name: card64; 
+  animation-delay: 3.35s; 
+}
+
+#card65 {
+  animation-name: card65; 
+  animation-delay: 3.40s; 
+}
+
+#card66 {
+  animation-name: card66; 
+  animation-delay: 3.45s; 
+}
+
+#card67 {
+  animation-name: card67; 
+  animation-delay: 3.50s; 
+}
+
+#card68 {
+  animation-name: card68; 
+  animation-delay: 3.55s; 
+}
+
+#card69 {
+  animation-name: card69; 
+  animation-delay: 3.60s; 
+}
+
+#card70 {
+  animation-name: card70; 
+  animation-delay: 3.65s; 
+}
+
+#card71 {
+  animation-name: card71; 
+  animation-delay: 3.70s; 
+}
+
+#card72 {
+  animation-name: card72; 
+  animation-delay: 3.75s; 
+}
+
+#card73 {
+  animation-name: card73; 
+  animation-delay: 3.80s; 
+}
+
+#card74 {
+  animation-name: card74; 
+  animation-delay: 3.85s; 
+}
+
+#card75 {
+  animation-name: card75; 
+  animation-delay: 3.90s; 
+}
+
+#card76 {
+  animation-name: card76; 
+  animation-delay: 3.95s; 
+}
+
+#card77 {
+  animation-name: card77; 
+  animation-delay: 4.00s; 
+}
+
+#card78 {
+  animation-name: card78; 
+  animation-delay: 4.05s; 
+}
+
+#card79 {
+  animation-name: card79; 
+  animation-delay: 4.10s; 
+}
+
+#card80 {
+  animation-name: card80; 
+  animation-delay: 4.15s; 
+}
+
+#card81 {
+  animation-name: card81; 
+  animation-delay: 4.20s; 
+}
+
+#card82 {
+  animation-name: card82; 
+  animation-delay: 4.25s; 
+}
+
+#card83 {
+  animation-name: card83; 
+  animation-delay: 4.30s; 
+}
+
+#card84 {
+  animation-name: card84; 
+  animation-delay: 4.35s; 
+}
+
+#card85 {
+  animation-name: card85; 
+  animation-delay: 4.40s; 
+}
+
+#card86 {
+  animation-name: card86; 
+  animation-delay: 4.45s; 
+}
+
+#card87 {
+  animation-name: card87; 
+  animation-delay: 4.50s; 
+}
+
+#card88 {
+  animation-name: card88; 
+  animation-delay: 4.55s; 
+}
+
+#card89 {
+  animation-name: card89; 
+  animation-delay: 4.60s; 
+}
+
+#card90 {
+  animation-name: card90;
+  animation-delay: 4.65s; 
+}
+
+#card91 {
+  animation-name: card91;
+  animation-delay: 4.70s; 
+}
+
+#card92 {
+  animation-name: card92;
+  animation-delay: 4.75s; 
+}
+
+#card93 {
+  animation-name: card93;
+  animation-delay: 4.80s; 
+}
+
+#card94 {
+  animation-name: card94;
+  animation-delay: 4.85s; 
+}
+
+#card95 {
+  animation-name: card95;
+  animation-delay: 4.90s; 
+}
+
+#card96 {
+  animation-name: card96;
+  animation-delay: 4.95s; 
+}
+
+#card97 {
+  animation-name: card97;
+  animation-delay: 5.00s; 
+}
+
+#card98 {
+  animation-name: card98;
+  animation-delay: 5.05s; 
+}
+
+#card99 {
+  animation-name: card99;
+  animation-delay: 5.10s; 
+}
+
+#card100 {
+  animation-name: card100;
+  animation-delay: 5.15s; 
+}
+
+#card101 {
+  animation-name: card101;
+  animation-delay: 5.20s; 
+}
+
+#card102 {
+  animation-name: card102;
+  animation-delay: 5.25s; 
+}
+
+#card103 {
+  animation-name: card103;
+  animation-delay: 5.30s; 
+}
+
+#card104 {
+  animation-name: card104;
+  animation-delay: 5.35s; 
+}
+
+#card105 {
+  animation-name: card105;
+  animation-delay: 5.40s; 
+}
+
+#card106 {
+  animation-name: card106;
+  animation-delay: 5.45s; 
+}
+
+#card107 {
+  animation-name: card107;
+  animation-delay: 5.50s; 
+}
+
+#card108 {
+  animation-name: card108;
+  animation-delay: 5.55s; 
+}
+
+#card109 {
+  animation-name: card109;
+  animation-delay: 5.60s; 
+}
+
+#card110 {
+  animation-name: card110;
+  animation-delay: 5.65s; 
+}
+
+#card111 {
+  animation-name: card111;
+  animation-delay: 5.70s; 
+}
+
+#card112 {
+  animation-name: card112;
+  animation-delay: 5.75s; 
+}
+
+#card113 {
+  animation-name: card113;
+  animation-delay: 5.80s; 
+}
+
+#card114 {
+  animation-name: card114;
+  animation-delay: 5.85s; 
+}
+
+#card115 {
+  animation-name: card115;
+  animation-delay: 5.90s; 
+}
+
+#card110 {
+  animation-name: card110;
+  animation-delay: 5.65s; 
+}
+
+#card116 {
+  animation-name: card116;
+  animation-delay: 5.70s; 
+}
+
+#card117 {
+  animation-name: card117;
+  animation-delay: 5.75s; 
+}
+
+#card118 {
+  animation-name: card118;
+  animation-delay: 5.80s; 
+}
+
+#card119 {
+  animation-name: card119;
+  animation-delay: 5.85s; 
+}
+
+#card120 {
+  animation-name: card120;
+  animation-delay: 5.90s; 
+}
+
+#card121 {
+  animation-name: card121;
+  animation-delay: 5.95s; 
+}
+
+#card122 {
+  animation-name: card122;
+  animation-delay: 6.00s; 
+}
+
+#card123 {
+  animation-name: card123;
+  animation-delay: 6.05s; 
+}
+
+#card124 {
+  animation-name: card124;
+  animation-delay: 6.10s; 
+}
+
+#card125 {
+  animation-name: card125;
+  animation-delay: 6.15s; 
+}
+
+#card126 {
+  animation-name: card126;
+  animation-delay: 6.20s; 
+}
+
+#card127 {
+  animation-name: card127;
+  animation-delay: 6.25s; 
+}
+
+#card128 {
+  animation-name: card128;
+  animation-delay: 6.30s; 
+}
+
+#card129 {
+  animation-name: card129;
+  animation-delay: 6.35s; 
+}
+
+#card130 {
+  animation-name: card130;
+  animation-delay: 6.40s; 
+}
+
+#card131 {
+  animation-name: card131;
+  animation-delay: 6.45s; 
+}
+
+#card132 {
+  animation-name: card132;
+  animation-delay: 6.50s; 
+}
+
+#card133 {
+  animation-name: card133;
+  animation-delay: 6.55s; 
+}
+
+#card134 {
+  animation-name: card134;
+  animation-delay: 6.60s; 
+}
+
+#card135 {
+  animation-name: card135;
+  animation-delay: 6.65s; 
+}
+
+#card136 {
+  animation-name: card136;
+  animation-delay: 6.70s; 
+}
+
+#card137 {
+  animation-name: card137;
+  animation-delay: 6.75s; 
+}
+
+#card138 {
+  animation-name: card138;
+  animation-delay: 6.80s; 
+}
+
+#card139 {
+  animation-name: card139;
+  animation-delay: 6.85s; 
+}
+
+#card140 {
+  animation-name: card140;
+  animation-delay: 6.90s; 
+}
+
+#card141 {
+  animation-name: card141;
+  animation-delay: 6.95s; 
+}
+
+#card142 {
+  animation-name: card141;
+  animation-delay: 7.00s; 
+}
+
+#card143 {
+  animation-name: card143;
+  animation-delay: 7.05s; 
+}
+
+#card144 {
+  animation-name: card144;
+  animation-delay: 6.70s; 
+}
+
+#card145 {
+  animation-name: card145;
+  animation-delay: 6.70s; 
+}
+
+#card146 {
+  animation-name: card146;
+  animation-delay: 6.75s; 
+}
+
+#card147 {
+  animation-name: card147;
+  animation-delay: 6.80s; 
+}
+
+#card148 {
+  animation-name: card148;
+  animation-delay: 6.85s; 
+}
+
+#card149 {
+  animation-name: card149;
+  animation-delay: 6.90s; 
+}
+
+#card150 {
+  animation-name: card150;
+  animation-delay: 6.95s; 
+}
+
+#card151 {
+  animation-name: card151;
+  animation-delay: 7.00s; 
+}
+
+#card152 {
+  animation-name: card152;
+  animation-delay: 7.05s; 
+}
+
+#card153 {
+  animation-name: card153;
+  animation-delay: 7.10s; 
+}
+
+#card154 {
+  animation-name: card154;
+  animation-delay: 7.15s; 
+}
+
+#card155 {
+  animation-name: card155;
+  animation-delay: 7.20s; 
+}
+
+#card156 {
+  animation-name: card156;
+  animation-delay: 7.25s; 
+}
+
+#card157 {
+  animation-name: card157;
+  animation-delay: 7.30s; 
+}
+
+#card158 {
+  animation-name: card158;
+  animation-delay: 7.35s; 
+}
+
+#card159 {
+  animation-name: card159;
+  animation-delay: 7.40s; 
+}
+
+#card160 {
+  animation-name: card160;
+  animation-delay: 7.45s; 
+}
+
+#card161 {
+  animation-name: card161;
+  animation-delay: 7.50s; 
+}
+
+#card162 {
+  animation-name: card162;
+  animation-delay: 7.55s; 
+}
+
+#card163 {
+  animation-name: card164;
+  animation-delay: 7.60s; 
+}
+
+#card164 {
+  animation-name: card164;
+  animation-delay: 7.65s; 
+}
+
+#card165 {
+  animation-name: card165;
+  animation-delay: 7.70s; 
+}
+
+#card166 {
+  animation-name: card166;
+  animation-delay: 7.75s; 
+}
+
+#card167{
+  animation-name: card167;
+  animation-delay: 7.80s; 
+}
+
+#card168 {
+  animation-name: card168;
+  animation-delay: 7.85s; 
+}
+
+#card169 {
+  animation-name: card169;
+  animation-delay: 7.90s; 
+}
+
+@keyframes card1{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card2{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card3{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card4{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card5{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card6{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card7{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card8{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card9{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card10{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card11{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card12{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card13{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card14{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card15{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card16{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card17{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card18{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card19{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card20{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card21{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card22{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card23{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card24{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card25{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card26{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card27{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card28{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card29{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card30{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card31{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card32{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card33{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card34{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card35{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card36{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card37{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card38{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card39{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card40{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card41{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card42{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card43{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card44{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card45{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card46{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card47{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card48{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card49{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card50{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card51{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card52{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card53{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card54{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card55{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card56{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card57{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card58{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card59{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card60{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card61{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card62{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card63{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card64{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card65{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card66{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card67{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card68{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card69{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card70{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card71{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card72{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card73{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card74{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card75{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card76{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card77{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card78{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card79{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card80{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card81{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card82{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card83{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card84{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card85{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card86{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card87{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card88{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card89{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card90{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card91{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card92{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card93{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card94{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card95{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card96{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card97{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card98{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card99{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card100{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card101{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card102{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card103{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card104{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card105{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card106{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card107{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card108{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card109{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card110{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card111{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card112{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card113{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card114{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card115{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card116{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card117{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card118{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card119{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card120{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card121{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card122{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card123{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card124{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card125{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card126{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card127{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card128{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card129{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card130{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card131{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card132{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card133{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card134{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card135{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card136{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card137{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card138{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card139{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card140{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card141{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card142{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card143{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card144{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card145{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card146{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card147{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card148{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card149{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card150{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card151{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card152{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card153{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card154{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card155{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card156{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card157{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card158{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card159{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card160{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card161{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card162{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card163{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card164{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card165{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card166{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card167{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card168{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+@keyframes card169{
+  0% {transform: rotateY(0deg)}
+  100% {transform: rotateY(180deg); color: transparent; background-color: transparent}
+}
+
+/*JAVASCRIPT CHANGES */ 
+@keyframes newCard1{
+  0% {transform: rotateX(0deg)}
+  100% {transform: rotateX(90deg)}
+}
+
+/*PROVIDE NEW ANIMATION WHEN THE DIVCOLORINFOISHOVERED ON*/
+
+
+

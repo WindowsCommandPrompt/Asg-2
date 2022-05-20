@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang = "EN-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Sudoku</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link href = "/normalise.css" rel = "stylesheet" type = "text/css"> 
+    <link href="pageStyling.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <!--Loading page-->
+    <div id = "loading"> 
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ObshHL.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </div> 
+    <!--Mobile shop--> 
+    <div id = "sudokuHintsStore"> 
+      <div id = "storeSudokuHints">
+        <i class = "material-icons">close</i> 
+      </div> 
+    </div> 
+    <!--Temporary div elements placed below--> 
+    <!--Choose the difficulty level--> 
+    <div id = "TranslucentBlackColorBase">
+      <div id = "chooseDifficultyLevel"> 
+        <!--Add in the login details-->
+        <div style = "display: flex; justify-content: space-between; width: 100%;">
+          <i class = "material-icons" id = "goBackToMainMenu">arrow_back</i>
+          <i class = "material-icons" id = "close">settings</i>
+        </div>
+        <br>
+        <br>
+        <br> 
+        <div id = "user"> 
+          Not signed in
+        </div> 
+        <br>
+        <br>
+        <br>
+        <div style = "display: flex; flex-direction: column; width: 50%; justify-content: center;">  
+          <label style = "color: black"> Please choose a difficulty level </label> 
+          <select id = "select"> 
+            <option> Easy </option>
+            <option> Normal </option> 
+            <option> Hard </option> 
+            <option> Extreme </option> 
+          </select> 
+        </div> 
+        <br>
+        <br>
+        <br>
+        <button type = "button" id = "proceed">GO</button> 
+        <br>
+        <br> 
+        <div id = "noOfHintsThatTheUserHas"> 
+          <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_szlepvdh.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" id = "aLottiePlayerDealWithIt" loop  autoplay></lottie-player>
+          <span id = "numberOfMinesweeperHints" style = "font-size: 30px;"></span> 
+          <p id = "someMessage">You are not signed in. In-game purchases is currently disabled</p>
+        </div> 
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_2svadkl0.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay id = "verifyLogIn"></lottie-player>
+        <br>
+        <br>
+        <button type = "button" id = "signIn">SIGN IN</button> 
+        <br>
+        <br>
+        <small> You can choose how many hints you would like to use later on during the game </small>
+        <div id = "block">
+          <div id = "numSpace"> 
+            0
+          </div> 
+          <div id= "controls"> 
+            <div class = "controlType"> 
+              <i class = "material-icons" id = "increase">arrow_upward</i>
+            </div> 
+            <div class = "controlType"> 
+              <i class = "material-icons" id = "decrease">arrow_downward</i>
+            </div> 
+          </div> 
+        </div> 
+        <br>
+        <br>
+        <button type = "button" id = "purchaseMoreMinesweeperHints">Purchase more hints from the shop</button> 
+      </div> 
+    </div> 
+    <!--Choose which powerup the person would want to buy--> 
+    <div id = "TranslucentBlackColorBase1">
+      <div id = "BuyPowerups">
+        <div id = "controls">
+          <i class = "material-icons" style = "font-size: 75px;" id = "closeLogIn">close</i>
+        </div> 
+        <!--Put information inside--> 
+        <!--Prompt the user to login before playing--> 
+        <div id = "loginCard">
+          <div id = "ONEACCOUNTALLOFZYGAMES">
+            <i class = "material-icons" style = "font-size: 40px">person</i>
+            <h3> One account. All of ZY Games </h3>
+            <small> You need to be signed in first before purchasing any in game powerups. </small>
+          </div> 
+          <!--Not using bootstrap here LOL Don't believe me you can go check my CSS files LOL--> 
+          <br> 
+          <br> 
+          <div id = "formCluster">
+            <div id = "enterUsername"> 
+              <label> Username </label>
+              <input type = "text" placeholder = "Username">
+            </div> 
+            <div id = "enterPassword">
+              <label> Password </label>
+              <input type = "text" placeholder = "Password">
+            </div> 
+          </div> 
+          <br> 
+          <br> 
+          <div id = "formControls"> 
+            <button type = "button">Reset</button>
+            <button type = "button">Log In</button>
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+    <!--Prompt the user whether the user would like to try inputting the password again--> 
+    <div id = "TranslucentBlackColorBase2"> 
+      <div id = "confirmation"> 
+        Are you sure you want to cancel the sign in process? Do take note that you will not be able to purchase in-game powerups. However, you can still play the game for free. Are you sure you want to not sign in?
+        <br>
+        <br>
+        <h2 style = "text-align: center">Make your decision fast....TIME IS TICKING!!</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div style = "display: flex; flex-direction: row; justify-content: space-around; width: 100%">
+          <button type = "button" id = "agree">Yes(Y)</button>
+          <button type = "button" id = "disagree">No(N)</button>
+        </div>
+        <br>
+        <br>
+        <div style = "display: flex; background-color: darkgreen; width: 100%; height: 100px;">
+          <div style = "display: flex; justify-content: center; align-items: center; height: 100%; width: 25%; color: lightgreen">
+            <i class = "material-icons">tips_and_updates</i>
+            <h2>Tip:</h2>
+          </div>
+          <div style = "display: flex; justify-content: center; align-items: center; height: 100%; width: 75%; color: lightgreen">
+            Please press either Y or N on your keyboard, Y to return to the login page and press N to return to the game
+          </div>
+        </div>
+      </div> 
+    </div> 
+    <!--temp end--> 
+    <header>
+      <div id = "BuyPowerupsBar"> 
+        <div id = "BuyTools"> 
+          Buy powerups now!
+          <div style = "background-color: white; border-radius: 100%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; " id = "addPowerups">
+            <i class = "material-icons" style = "color: black; font-size: 40px;">add</i>
+          </div> 
+        </div> 
+        <div id = "PointsRemaining">
+          Not logged in
+        </div> 
+      </div> 
+      <div id = "MainTimerFrame">
+        Time used
+        <div id = "TimerBox">
+          00: 00: 00
+        </div> 
+      </div> 
+    </header> 
+    <div id = "status">
+      You have selected tile number: <span id = "selectedTile"></span> 
+    </div> 
+    <main> 
+      <div id = "rowIndicator">
+        <br>  
+        <br> 
+        <div class = "box"> 1 </div> 
+        <div class = "box"> 2 </div> 
+        <div class = "box"> 3 </div> 
+        <div class = "box"> 4 </div> 
+        <div class = "box"> 5 </div>
+        <div class = "box"> 6 </div> 
+        <div class = "box"> 7 </div> 
+        <div class = "box"> 8 </div> 
+        <div class = "box"> 9 </div> 
+      </div> 
+      <div id = "mainFrame"> 
+        <div id = "columnIndicator">
+          <div class = "columnBox"> A </div>
+          <div class = "columnBox"> B </div>
+          <div class = "columnBox"> C </div>
+          <div class = "columnBox"> D </div>
+          <div class = "columnBox"> E </div>
+          <div class = "columnBox"> F </div>
+          <div class = "columnBox"> G </div>
+          <div class = "columnBox"> H </div>
+          <div class = "columnBox"> I </div>
+        </div> 
+        <div class = "row">
+          <!--Box 1--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div>
+            </div>
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div>
+            </div>
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+            </div> 
+          </div>
+          <!--Box 2-->  
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+            </div>
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+            </div>
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div>
+          <!--Box 3--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+        </div> 
+        <div class = "row">
+          <!-- Box 4 --> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+          <!-- Box 5--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+          <!--Box 6--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+        </div>
+        <div class = "row">
+          <!--Box 7--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+          <!--Box 8--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div>
+          <!--Box 9--> 
+          <div class = "mainBoxes">
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+            <div class = "subrows">
+              <div class = "individualCell"></div>
+              <div class = "individualCell"></div> 
+              <div class = "individualCell"></div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+      <!--Boxes end--> 
+      <div id = "selectionBar">
+        <!--Another icon used to remove a number from a square-->
+        <div id = "gameControls">
+          <i class = "material-icons" style = "font-size: 75px" id = "removeNumber">delete</i>
+          <i class = "material-icons" style = "font-size: 75px;" id = "restartGame">refresh</i>
+          <i class = "material-icons" style = "font-size: 75px;" id = "clearAll">close</i>
+        </div> 
+        <div id = "housing"> 
+          <div class = "subBox"> 
+            <div class = "card">1</div>
+            <div class = "card">2</div>
+          </div> 
+          <div class = "subBox"> 
+            <div class = "card">3</div> 
+            <div class = "card">4</div>
+          </div> 
+          <div class = "subBox"> 
+            <div class = "card">5</div>
+            <div class = "card">6</div> 
+          </div> 
+          <div class = "subBox"> 
+            <div class = "card">7</div> 
+            <div class = "card">8</div> 
+          </div> 
+          <div class = "subBox"> 
+            <div class = "card">9</div> 
+          </div> 
+        </div> 
+      </div>  
+    </main> 
+    <!--table end--> 
+    <!--CSS validator--> 
+    <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightgray; width: 100%; height: 100px">
+      CSS Validation
+      <p>
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style = "border:0;width:88px;height:31px"
+                   src   = "https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                   alt   = "Valid CSS!" />
+          </a>
+      </p>
+    </div> 
+    <footer>
+      2022 All Rights Reserved (under development)
+    </footer> 
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <!--Add in the lottie-files script--> 
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src = "finalChecking.js"></script> 
+    <script src="mainFunction.js"></script>
+    <script src="timer.js"></script> 
+    <script src = "forwardToUserAccount.js"></script> 
+    <script src = "numberAllocationPositionRandomisation.js"></script> 
+  </body>
+</html>
+

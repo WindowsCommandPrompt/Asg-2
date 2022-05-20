@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>ZY's very own Board Game!!!!</title>
+    <link href = "BoardGame.css" rel="stylesheet" type="text/css" />
+    <link href = "animate.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "dice.css" rel = "stylesheet" type = "text/css"> 
+    <link href = "https://fonts.googleapis.com/css?family=Varela+Round" rel = "stylesheet" type = "text/css">
+    <link href = "/normalise.css" rel = "stylesheet" type = "text/css"> 
+  </head>
+  <body>
+    <!--45 squares--> 
+    <!--1 square is <td></td> --> 
+    <!--swap out CERTAIN <td class = "spaceOut"></td>--> 
+    <!--Every 15 tile there will be a mystery tile. -->
+    <div id = "Base"> 
+      <div id = "baseContainer"> 
+        <button type = "button" id = "Identifier"> I ACKNOWLEDGE </button> 
+      </div> 
+      <div id = "MainContainer"> 
+        <div id = "info"> 
+          <button type = "button" id = "button">Roll the dice</button>
+          <p id = "rollDiceText">  Do take note that you have only 1 chance to roll the dice </p> 
+        </div>  
+      </div> 
+      <!--WARNING--> 
+      <div> 
+        <div id = "">
+        </div> 
+      </div> 
+    </div>
+    <!--Dice faces--> 
+    <div id = "oneDot">
+      <div id = "oneDotCentralising">
+        <div class = "dot"></div> 
+      </div> 
+    </div> 
+    <div id = "twoDot">
+      <div class = "firstrowright">
+        <div class = "dot"></div> 
+      </div> 
+      <div id = "firstrowleft">
+        <div class = "dot"></div> 
+      </div> 
+    </div> 
+    <div id = "threeDot">
+      <div class = "firstrowright">
+        <div class = "dot"></div> 
+      </div> 
+      <div class = "secondrowcenter"> 
+        <div class = "dot"></div> 
+      </div> 
+      <div class = "lastrowleft">
+        <div class = "dot"></div> 
+      </div> 
+    </div>
+    <div id = "fourDot">
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div>  
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div> 
+    </div>
+    <div id = "fiveDot">
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div>  
+      <div class = "secondrowcenter"> 
+        <div class = "dot"></div> 
+      </div> 
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div> 
+    </div>
+    <div id = "sixDot">
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div>
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div>
+      <div class = "firstrowleftright">
+        <div class = "dot"></div> 
+        <div class = "dot"></div> 
+      </div>
+    </div> 
+    <!--Contact form--> 
+    <div id = "BaseForSection"> 
+      <div class = "internal"> 
+        <div class = "internalText centraliseContent">
+          <button type = "button" id = "exitScreen">EXIT</button> 
+          <h3 style = "text-align: center"><u> Hello player, we'd love to listen to your feedback! </u></h3> 
+          <form> 
+            <label> Please enter your name </label> 
+            <input style = "width: 50%;" type = "text" placeholder = "Your name here, please" required>
+            <br>
+            <br>
+            <br>
+            <br> 
+            <label> Please enter your email address </label> 
+            <input style = "width: 50%;" type = "text" placeholder = "Your email address" required>  
+          </form> 
+        </div> 
+      </div>
+    </div>
+    <!--How to play--> 
+    <div id = "BaseForHowToPlay">
+      <div class = "internal">
+        <div class = "internalText">
+          <button type = "button" id = "exitHowToPlayScreen">EXIT</button> 
+          <h1 style = "text-align: center">BOARD GAME</h1>
+          <small style = "text-align: center">Developed by: Zhe Yun</small> 
+          <ol style = "line-height: 2.5"> 
+            <li> This game can be played with 2 - 4 persons </li> 
+            <li> This game has <strong> NO </strong> age restrictions. Hence, any can play this game. Feel free to play it whenever you are free. </li> 
+            <li> This dev will update the game regularly but will <strong> NOT </strong> be responsible for any mishaps caused by improper usage of this game. Modifying any part of the code, IS STRICTLY NOT ALLOWED to ensure normal playing of the game. If you detect a bug, please use the contact form in the game. The developer here would always be on standby to ensure that the bug that you have detected would be fixed in no time.</li> 
+          </ol> 
+        </div> 
+        <!--Add another div container here using jquery--> 
+      </div>
+    </div>  
+    <div id = "BaseForUserGameNameCreation">
+      <div class = "internal">
+        <div class = "internalText">
+          <button type = "button" id = "userCreateName">OK</button> 
+          <small>The name that you have entered here will be displayed on your player marker as soon as you press on the 'OK' button. If you have not selected your marker color, you can select one from the list of </small>
+          <br> 
+          <br> 
+          <div> Please generate a random username for me </div>
+          <br>
+          <br> 
+          <div id = "colorSelectionBase"> 
+            Please pick a color for your marker below.  
+            <div id = "colorSelection">
+              <div id = "color1"></div>
+              <div id = "color2"></div>
+              <div id = "color3"></div>
+              <div id = "color4"></div>
+              <div id = "color5"></div>
+              <div id = "color6"></div>
+              <div id = "color7"></div> 
+              <div id = "color8"></div>
+              <div id = "color9"></div> 
+            </div> 
+          </div> 
+          <br>
+          <br> 
+          <div style = "width: 100%; background-color: red; text-align: center; color: white; height: 100px; border-radius: 5px;" id = "warning">
+            <p> WARNING! For your own safety, please do not put your real name.</p> 
+          </div> 
+        </div> 
+      </div>
+    </div>  
+    <!--LOADING SCREEN, BEFORE THE ENTIRE BOARD GAME ACTUALLY LOADS--> 
+    <div id = "Loader"> 
+      <div style = "display: flex; flex-direction: column; justify-content: center;"> 
+        <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_x62chJ.json" background="transparent"  speed="1"  style="width: 100%; height: 300px"  loop autoplay></lottie-player>
+        <p id = "text">LOADING</p> 
+      </div>
+    </div> 
+    <div id = "BaseForLoadingForMoreThan10Seconds"> 
+      <div class = "internal"> 
+        <div id = "LoadingForMoreThan10Seconds">
+          <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_xbf1be8x.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+          <p id = "loadingTooLong">Loading is taking longer than expected</p> 
+        </div> 
+      </div> 
+    </div> 
+    <!--IF THE SCREEN WIDTH IS TOO NARROW FOR THE DESKTOP PAGE--> 
+    <div id = "InsufficientWidthError"> 
+      <div id = "smallNavBar">
+        <div style = "display: flex; justify-content: center; align-items: center;"> 
+          <button type = "button" id = "QuitGameDueToInsufficientWidth">QUIT THIS GAME</button> 
+        </div> 
+        <div style = "display: flex; justify-content: center; align-items: center;"> 
+          <button type = "button" id = "HelpButtonDueToInsufficientWidth">HELP</button>
+        </div> 
+      </div>
+      Sorry, your screen is not wide enough to use the desktop version of this game.
+      <br> 
+      <br> 
+      <div id = "TipBox"> 
+        Are you trying to access this page on a mobile device? Don't worry. You can still play this game on any device. Just simply rotate your device to landscape mode.  
+        <h2 id = "viewportWidthIndicator">Your current viewport width is: </h2>
+        <br>
+        <h2 id = "viewportHeightIndicator">Your current viewport height is: </h2> 
+        You need to have at least 1000px worth of viewport width to play this game, and at least 200px of viewport height.
+        </div> 
+            <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightgray">
+        <p> CSS VALIDATION </p>  
+        <p class = "CSSValidationImage">
+          <a href="https://jigsaw.w3.org/css-validator/check/referer">
+              <img style="border:0;width:88px;height:31px"
+                  src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                  alt="Valid CSS!" />
+          </a>
+        </p>
+      </div> 
+    </div> 
+    <!--NO INTERNET CONNECTION--> 
+
+    
+    <header> 
+      Welcome to play the game
+      <div id = "Control">
+        <button type = "button" id = "CheckPlayers"> How To Play? </button>  
+        <button type = "button" id = "GiveFeedBack"> Give Feedback </button> 
+      </div> 
+      <button type = "button" id = "Flip">START GAME (matchmaking required)</button>
+      <button type = "button" id = "quit">QUIT GAME </button> 
+    </header> 
+    <h1><u> Board Game </u></h1> 
+    <table> 
+      <tr> 
+        <!-- Marker of the 4 players should start from tile 1 --> 
+        <td class = "alignNumbers">1</td>
+        <td class = "alignNumbers">2</td> 
+        <td class = "alignNumbers">3</td>
+        <td class = "alignNumbers">4</td>
+        <td class = "alignNumbers">5</td>
+        <td class = "alignNumbers">6</td>
+        <td class = "alignNumbers">7</td>
+        <td class = "alignNumbers">8</td>
+        <td class = "alignNumbers">9</td>
+        <td class = "alignNumbers">10</td>
+        <td class = "alignNumbers">11</td>
+        <td class = "alignNumbers">12</td>
+        <td class = "alignNumbers">13</td>
+        <td class = "alignNumbers">14</td>
+        <td class = "alignNumbers">15</td>
+      </tr> 
+      <tr>
+        <td class = "alignNumbers" style = "background-color: yellow">56</td>
+        <td class = "spaceOut" id = "card1"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card2">H</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card3">E</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card4">L</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card5">L</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card6">O</td>
+        <td class = "spaceOut" id = "card7"></td>
+        <td class = "spaceOut" id = "card8"></td>
+        <td class = "spaceOut" id = "card9"></td>
+        <td class = "spaceOut" id = "card10"></td>
+        <td class = "spaceOut" id = "card11"></td>
+        <td class = "spaceOut" id = "card12"></td>
+        <td class = "spaceOut" id = "card13"></td>
+        <td class = "alignNumbers">16</td> 
+      </tr> 
+      <tr>
+        <td class = "alignNumbers">55</td>
+        <td class = "spaceOut" id = "card14"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card15">A</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card16">N</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card17">D</td>
+        <td class = "spaceOut" id = "card18"></td>
+        <td class = "spaceOut" id = "card19"></td>
+        <td class = "spaceOut" id = "card20"></td>
+        <td class = "spaceOut" id = "card21"></td>
+        <td class = "spaceOut" id = "card22"></td>
+        <td class = "spaceOut" id = "card23"></td>
+        <td class = "spaceOut" id = "card24"></td>
+        <td class = "spaceOut" id = "card25"></td>
+        <td class = "spaceOut" id = "card26"></td>
+        <td class = "alignNumbers">17</td>
+      </tr> 
+      <tr>
+        <td class = "alignNumbers">54</td>
+        <td class = "spaceOut" id = "card27"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card28">W</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card29">E</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card30">L</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card31">C</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card32">O</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card33">M</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 50px; text-align: center" id = "card34">E</td>
+        <td class = "spaceOut" id = "card35"></td>
+        <td class = "spaceOut" id = "card36"></td>
+        <td class = "spaceOut" id = "card37"></td>
+        <td class = "spaceOut" id = "card38"></td>
+        <td class = "spaceOut" id = "card39"></td>
+        <td class = "alignNumbers">18</td>
+      </tr> 
+      <tr> 
+        <td class = "alignNumbers">53</td>
+        <td class = "spaceOut" id = "card40"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card41">C</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card42">L</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card43">I</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card44">C</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card45">K</td>
+        <td class = "spaceOut" id = "card46"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card47">O</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card48">N</td>
+        <td class = "spaceOut" id = "card49"></td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card50">T</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card51">H</td>
+        <td class = "spaceOut" style = "font-weight: bold; font-size: 30px; text-align: center" id = "card52">E</td>
+        <td class = "alignNumbers">19</td> 
+      </tr>
+      <tr>
+        <td class = "alignNumbers">52</td>
+        <td class = "spaceOut" id = "card53"></td>
+        <td class = "spaceOut" id = "card54"></td>
+        <td class = "spaceOut" id = "card55"></td>
+        <td class = "spaceOut" id = "card56"></td>
+        <td class = "spaceOut" id = "card57"></td>
+        <td class = "spaceOut" id = "card58"></td>
+        <td class = "spaceOut" id = "card59"></td>
+        <td class = "spaceOut" id = "card60"></td>
+        <td class = "spaceOut" id = "card61"></td>
+        <td class = "spaceOut" id = "card62"></td>
+        <td class = "spaceOut" id = "card63"></td>
+        <td class = "spaceOut" id = "card64"></td>
+        <td class = "spaceOut" id = "card65"></td>
+        <td class = "alignNumbers">20</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">51</td>
+        <td class = "spaceOut" id = "card66"></td>
+        <td class = "spaceOut" id = "card67"></td>
+        <td class = "spaceOut" id = "card68"></td>
+        <td class = "spaceOut" id = "card69"></td>
+        <td class = "spaceOut" id = "card70"></td>
+        <td class = "spaceOut" id = "card71"></td>
+        <td class = "spaceOut" id = "card72"></td>
+        <td class = "spaceOut" id = "card73"></td>
+        <td class = "spaceOut" id = "card74"></td>
+        <td class = "spaceOut" id = "card75"></td>
+        <td class = "spaceOut" id = "card76"></td>
+        <td class = "spaceOut" id = "card77"></td>
+        <td class = "spaceOut" id = "card78"></td>
+        <td class = "alignNumbers">21</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">50</td>
+        <td class = "spaceOut" id = "card79"></td>
+        <td class = "spaceOut" id = "card80"></td>
+        <td class = "spaceOut" id = "card81"></td>
+        <td class = "spaceOut" id = "card82"></td>
+        <td class = "spaceOut" id = "card83"></td>
+        <td class = "spaceOut" id = "card84"></td>
+        <td class = "spaceOut" id = "card85"></td>
+        <td class = "spaceOut" id = "card86"></td>
+        <td class = "spaceOut" id = "card87"></td>
+        <td class = "spaceOut" id = "card88"></td>
+        <td class = "spaceOut" id = "card89"></td>
+        <td class = "spaceOut" id = "card90"></td>
+        <td class = "spaceOut" id = "card91"></td>
+        <td class = "alignNumbers">22</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">49</td>
+        <td class = "spaceOut" id = "card92"></td>
+        <td class = "spaceOut" id = "card93"></td>
+        <td class = "spaceOut" id = "card94"></td>
+        <td class = "spaceOut" id = "card95"></td>
+        <td class = "spaceOut" id = "card96"></td>
+        <td class = "spaceOut" id = "card97"></td>
+        <td class = "spaceOut" id = "card98"></td>
+        <td class = "spaceOut" id = "card99"></td>
+        <td class = "spaceOut" id = "card100"></td>
+        <td class = "spaceOut" id = "card101"></td>
+        <td class = "spaceOut" id = "card102"></td>
+        <td class = "spaceOut" id = "card103"></td>
+        <td class = "spaceOut" id = "card104"></td>
+        <td class = "alignNumbers">23</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">48</td>
+        <td class = "spaceOut" id = "card105"></td>
+        <td class = "spaceOut" id = "card106"></td>
+        <td class = "spaceOut" id = "card107"></td>
+        <td class = "spaceOut" id = "card108"></td>
+        <td class = "spaceOut" id = "card109"></td>
+        <td class = "spaceOut" id = "card110"></td>
+        <td class = "spaceOut" id = "card111"></td>
+        <td class = "spaceOut" id = "card112"></td>
+        <td class = "spaceOut" id = "card113"></td>
+        <td class = "spaceOut" id = "card114"></td>
+        <td class = "spaceOut" id = "card115"></td>
+        <td class = "spaceOut" id = "card116"></td>
+        <td class = "spaceOut" id = "card117"></td>
+        <td class = "alignNumbers">24</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">47</td>
+        <td class = "spaceOut" id = "card118"></td>
+        <td class = "spaceOut" id = "card119"></td>
+        <td class = "spaceOut" id = "card120"></td>
+        <td class = "spaceOut" id = "card121"></td>
+        <td class = "spaceOut" id = "card122"></td>
+        <td class = "spaceOut" id = "card123"></td>
+        <td class = "spaceOut" id = "card124"></td>
+        <td class = "spaceOut" id = "card125"></td>
+        <td class = "spaceOut" id = "card126"></td>
+        <td class = "spaceOut" id = "card127"></td>
+        <td class = "spaceOut" id = "card128"></td>
+        <td class = "spaceOut" id = "card129"></td>
+        <td class = "spaceOut" id = "card130"></td>
+        <td class = "alignNumbers">25</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">46</td>
+        <td class = "spaceOut" id = "card131"></td>
+        <td class = "spaceOut" id = "card132"></td>
+        <td class = "spaceOut" id = "card133"></td>
+        <td class = "spaceOut" id = "card134"></td>
+        <td class = "spaceOut" id = "card135"></td>
+        <td class = "spaceOut" id = "card136"></td>
+        <td class = "spaceOut" id = "card137"></td>
+        <td class = "spaceOut" id = "card138"></td>
+        <td class = "spaceOut" id = "card139"></td>
+        <td class = "spaceOut" id = "card140"></td>
+        <td class = "spaceOut" id = "card141"></td>
+        <td class = "spaceOut" id = "card142"></td>
+        <td class = "spaceOut" id = "card143"></td>
+        <td class = "alignNumbers">26</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">45</td>
+        <td class = "spaceOut" id = "card144"></td>
+        <td class = "spaceOut" id = "card145"></td>
+        <td class = "spaceOut" id = "card146"></td>
+        <td class = "spaceOut" id = "card147"></td>
+        <td class = "spaceOut" id = "card148"></td>
+        <td class = "spaceOut" id = "card149"></td>
+        <td class = "spaceOut" id = "card150"></td>
+        <td class = "spaceOut" id = "card151"></td>
+        <td class = "spaceOut" id = "card152"></td>
+        <td class = "spaceOut" id = "card153"></td>
+        <td class = "spaceOut" id = "card154"></td>
+        <td class = "spaceOut" id = "card155"></td>
+        <td class = "spaceOut" id = "card156"></td>
+        <td class = "alignNumbers">27</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">44</td>
+        <td class = "spaceOut" id = "card157"></td>
+        <td class = "spaceOut" id = "card158"></td>
+        <td class = "spaceOut" id = "card159"></td>
+        <td class = "spaceOut" id = "card160"></td>
+        <td class = "spaceOut" id = "card161"></td>
+        <td class = "spaceOut" id = "card162"></td>
+        <td class = "spaceOut" id = "card163"></td>
+        <td class = "spaceOut" id = "card164"></td>
+        <td class = "spaceOut" id = "card165"></td>
+        <td class = "spaceOut" id = "card166"></td>
+        <td class = "spaceOut" id = "card167"></td>
+        <td class = "spaceOut" id = "card168"></td>
+        <td class = "spaceOut" id = "card169"></td>
+        <td class = "alignNumbers">28</td>
+      </tr>
+      <tr>
+        <td class = "alignNumbers">43</td>
+        <td class = "alignNumbers">42</td>
+        <td class = "alignNumbers">41</td>
+        <td class = "alignNumbers">40</td>
+        <td class = "alignNumbers">39</td>
+        <td class = "alignNumbers">38</td>
+        <td class = "alignNumbers">37</td>
+        <td class = "alignNumbers">36</td>
+        <td class = "alignNumbers">35</td>
+        <td class = "alignNumbers">34</td>
+        <td class = "alignNumbers">33</td>
+        <td class = "alignNumbers">32</td>
+        <td class = "alignNumbers">31</td>
+        <td class = "alignNumbers">30</td>
+        <td class = "alignNumbers">29</td>
+      </tr> 
+    </table> 
+    <div style = "display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: lightgray">
+      <p> CSS VALIDATION </p>  
+      <p class = "CSSValidationImage">
+        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="Valid CSS!" />
+        </a>
+      </p>
+    </div> 
+    <footer>
+      2022 All Rights Reserved. (Under development)
+    </footer>  
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src = "gameFunctionality.js"></script>
+    <script src = "textAnimation.js"></script> 
+    <script src = "viewportWidthCalculation.js"></script>
+    <script src = "repeating.js"></script>  
+    <noscript> Unable to display webpage, most likely due to an outdated version of your browser. Please update to the latest version of your browswer and re-navigate back to the site again. </noscript> 
+  </body>
+</html>
+<!--END--> 

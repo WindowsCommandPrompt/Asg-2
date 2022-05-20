@@ -1,0 +1,40 @@
+body {
+  font-family: Varela Round, sans-serif;
+  background-color: beige;
+}
+
+.card {
+  width: 100%; 
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; 
+}
+
+#bulletPoints {
+  font-size: 15px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  height: 100px;
+}
+
+.material-icons{
+  transition: color 1s;
+}
+
+.material-icons:hover{
+  color: orange; 
+  cursor: pointer;
+}

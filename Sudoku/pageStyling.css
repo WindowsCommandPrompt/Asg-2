@@ -1,0 +1,551 @@
+body{
+  font-family: Varela Round, sans-serif;
+  display: flex;
+  flex-direction: column; 
+  overflow-y: hidden;
+  overflow-anchor: none; 
+  transition: opacity 1s; 
+}
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  background-color: lightblue;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Row indicator*/
+#rowIndicator{
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 5%;
+}
+
+.box{
+  height: 11.1111111111%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/*column indicator*/
+#columnIndicator{
+  font-size: 10px;
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  border-style: none;
+}
+
+.columnBox {
+  width: 11.11111111111111%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+/*Enlarge the font-size when the overall screen width exceeds 1000px*/
+@media (min-width: 1000px){
+  .columnBox, .box{
+    font-size: 25px;
+  }
+}
+
+/*Selector*/
+#status{
+  background-color: lightgray;
+  width: 100%;
+  height: 50px;
+}
+
+/*ADD IN DETAILS INTO THE HEADER*/ 
+
+
+#color1 {
+  background-color: red;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px; 
+  box-shadow: 1px 1px;
+}
+
+/*Define the grids*/ 
+#mainFrame{
+  width: 100%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row; 
+  width: 100%;
+  height: 33.3333333333%;
+}
+
+.mainBoxes{
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  width: 33.3333333%;
+  height: 100%;
+}
+
+.subrows {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 33.33333333333%; 
+}
+
+.individualCell {
+  border-style: solid;
+  width: 33.333333333%;
+  height: 100%; 
+  border-width: 0.5px;
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1000px){
+  .individualCell{
+    font-size: 45px;
+    font-weight: bold;
+  }
+}
+
+/*Selection bar*/
+#selectionBar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+
+#housing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.subBox {
+  display: flex;
+  width: 100%;
+}
+
+/*Number cards (1 to 6)*/
+.card {
+  background-color: white; 
+  width: 50%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-style: solid;
+}
+
+/*footer*/
+footer {
+  background-color: black;
+  color: white;
+  height: 100px;
+  width: 100%; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+
+/*MEDIA QUERIES*/ 
+/*purpose of the following media queries to ensure that the grid's alignment is still there.*/ 
+@media (min-width: 600px){
+  #mainFrame{
+    height: 600px;
+  }
+}
+
+@media (min-width: 700px){
+  #mainFrame {
+    height: 700px; 
+  }
+}
+
+@media (min-width: 1000px){
+  #mainFrame{
+    height: 1000px;
+  }
+}
+
+@media (min-width: 1200px){
+  #mainFrame{
+    height: 1100px;
+  }
+}
+
+@media (min-width: 1350px){
+  #mainFrame{
+    height: 1400px;
+  }
+}
+
+/*Game control bar*/ 
+#gameControls{
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#removeNumber:hover, #restartGame:hover, #clearAll:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+/*Prompt the user on the difficulty of the level*/
+#TranslucentBlackColorBase{
+  background-color: rgb(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1; 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s;
+}
+
+#chooseDifficultyLevel{
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close, #goBackToMainMenu{
+  font-size: 75px;
+  color: black;
+  transition: color 1s;
+}
+
+#goBackToMainMenu:hover{
+  cursor: pointer;
+  color: orange;
+}
+
+#BuyPowerupsBar{
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+  border-radius: 5px;
+  height: 100%;
+}
+
+/*Players can purchase power-ups with in-game currency with a click of this button*/ 
+#TranslucentBlackColorBase1, #sudokuHintsStore, #loading{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1; 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s;
+}
+
+#loading{
+  z-index: 3;
+  background-color: rgb(0, 0, 0, 0.75);
+}
+
+#sudokuHintsStore{
+  z-index: 2; 
+  background-color: rgb(0, 0, 0, 0.75);
+}
+
+#storeSudokuHints{
+  background-color: white;
+  height: 50%;
+  width: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#storeControls{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#TranslucentBlackColorBase2 {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1; 
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s, ;
+}
+
+#confirmation{
+  display: flex;
+  flex-direction: column;
+  transition: opacity 1s;
+}
+
+#BuyTools{
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: green;
+  color: yellow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#PointsRemaining{
+  background-color: black;
+  color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  height: 50%;
+}
+
+/*This window will pop up showing what are some of the in-game tools the user can purchase */
+#BuyPowerups, #confirmation{
+  background-image: linear-gradient(45deg, white, lightblue, white);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  transition: opacity 1s;
+  justify-content: center;
+  align-items: center;
+}
+
+#controls{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  justify-content: flex-end;
+}
+
+#loginCard{
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 50%;
+  height: 100%;
+  border-style: solid;
+}
+
+#ONEACCOUNTALLOFZYGAMES{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 25%;
+  align-items: center;
+  justify-content: center;
+}
+
+#formCluster{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#enterUsername, #enterPassword{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#proceed {
+  background-color: red;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border-style: solid;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+#proceed:hover {
+  cursor: pointer;
+  background-color: white;
+  color: red;
+}
+
+/*Style the header*/
+#MainTimerFrame{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100px;
+}
+
+#TimerBox{
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 30px;
+}
+
+/*Button styling*/
+#agree, #disagree{
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  transition: background-color 1s, color 1s;
+}
+
+#agree{
+  background-color: green; 
+}
+
+#agree:hover{
+  color: green;
+  background-color: white;
+  cursor: pointer; 
+}
+
+#disagree{
+  background-color: red; 
+}
+
+#disagree:hover{
+  color: red;
+  background-color: white;
+  cursor: pointer; 
+}
+
+#closeLogIn:hover{
+  cursor: pointer;
+  color: orange;
+}
+
+#user {
+  background-color: black;
+  width: 40%;
+  height: 50px;
+}
+
+#noOfHintsThatTheUserHas{
+  width: 100%;
+  height: 150px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#block {
+  display: flex;
+  width: 300px;
+  height: 100px;
+  border-style: solid;
+  background-color: red;
+}
+
+/*Where the number will be displayed*/ 
+#numSpace {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/*control space*/ 
+#controls{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controlType {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.5px;
+}
+
+
+#container {
+  height: 100px; 
+  width: 100%;
+  display: flex;
+}
+
+#decrease {
+  background-color: red;
+  color: white;
+}
+
+#increase {
+  background-color: green;
+  color: white;
+}
+
+#decrease:hover, #increase:hover{
+  cursor: pointer;
+}
+
+/*Gear Icon animation*/ 
+/*@keyframes*/
+
+
+
+

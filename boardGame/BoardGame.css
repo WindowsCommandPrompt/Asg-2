@@ -1,0 +1,388 @@
+body {
+  font-family: Varela Round, sans-serif;  
+}
+
+header{
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(180deg, white, lightblue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-style: solid;
+}
+
+#Base{
+  background-color: lightblue; 
+  width: 100%;
+  height: 100%;
+  position: fixed; 
+  z-index: 7;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+#BaseForSection {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 8;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+#BaseForHowToPlay {
+  display: none;
+  flex-direction: column;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+#BaseForUserGameNameCreation {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.internal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.internalText{
+  background-color: white;
+  width: 50%;
+  height: 100%;
+}
+
+.centraliseItems{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  text-align: center;
+  border-radius: 5px;
+  border-style: solid;
+  background-color: antiquewhite;
+  width: 75%;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+}
+
+#quit{
+  background-color: white;
+  border-style: solid;
+  border-radius: 5px;
+  color: red;
+  transition: background-color 1s, color 1s; 
+}
+
+#Control {
+  background-color: lightgreen; 
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#CheckPlayers{
+  background-color: blue;
+  color: white; 
+  border-radius: 5px;
+  border-style: solid;
+  width: 100%;
+  height: 50px;
+  transition: background-color 1s, white 1s;
+} 
+
+#quit:hover{
+  background-color: red;
+  color: white;
+  cursor: pointer; 
+}
+
+table, tr, td{
+  border-style: solid;
+}
+
+.alignNumbers{
+  background-color: aqua;
+  vertical-align: top;
+}
+
+td{
+  width: 5%;
+  height: 65px;
+  border-radius: 5px;
+}
+
+.spaceOut {
+  background-color: white;
+}
+
+table {
+  width: 100%; 
+  background-color: blue; 
+}
+
+/*This thing can move around the board*/ 
+#Player1 {
+  background-color: green;
+  z-index: 5; 
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  position: absolute; 
+}
+
+/*A name that would be displayed on the player's marker*/ 
+#player1Name, #player2Name, #player3Name, #player4Name{
+  position: relative; 
+}
+
+#Player2 {
+  background-color: blue;
+  z-index: 6; 
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+
+/* Let the players choose their own colour */ 
+#Player3 {
+  background-color: lightblue;
+}
+
+#Player4 {
+  background-color: brown; 
+}
+
+/*overForDiceRolling*/
+#MainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  width: 100%;
+  height: 50%; 
+}
+
+#info {
+  background-color: white;
+  border-radius: 5px;
+  width: 50%;
+  height: 100%; 
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+button#Identifier {
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  background-color: white;
+  width: 170px;
+  height: 70px;
+}
+
+/*LET THE PROGRAM PICK A RANDOM COLOR MARKER FOR THE PLAYER*/ 
+#colorSelectionBase {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center; 
+  background-color: beige;
+}
+
+#colorSelection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} 
+
+#color1, #color2, #color3, #color4, #color5, #color6, #color7, #color8, #color9 {
+  width: 30px;
+  height: 30px; 
+  border-radius: 100%;
+  box-shadow: 1px 1px;
+}
+
+#color1 {
+  background-color: red; 
+}
+
+#color2 {
+  background-color: blue;
+}
+
+#color3 {
+  background-color: green;
+}
+
+#color4 {
+  background-color: yellow; 
+}
+
+#color5 {
+  background-color: turquoise;
+}
+
+#color6 {
+  background-color: brown; 
+}
+
+#color7 {
+  background-color: violet;
+}
+
+#color8 {
+  background-color: aqua;
+}
+
+#color9 {
+  background-color: azure;
+}
+
+/*LOADING SCREEN*/
+#Loader {
+  display: block; 
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9996;
+}
+
+#LoadingForMoreThan10Seconds {
+  background-color: lightblue; 
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  border-radius: 5px;
+  border-style: solid;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#BaseForLoadingForMoreThan10Seconds {
+  display: none; 
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+/*webpage display error due to insufficient screen width*/
+#InsufficientWidthError {
+  display: none; 
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  overflow-y: scroll;
+}
+
+#TipBox {
+  width: 100%;
+  height: 300px;
+  background-color: lightgreen;
+  color: green;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#smallNavBar {
+  background-color: gainsboro; 
+  width: 100%;
+  height: 50px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#QuitGameDueToInsufficientWidth{
+  width: 150px;
+  height: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+#HelpButtonDueToInsufficientWidth{
+  width: 150px;
+  height: 100%;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  transition: background-color 1s, color 1s; 
+}
+
+
+/*Message randomisation results*/
+#MysteryTileMessageNegative {
+  background-color: red; 
+} 
+
+#MysteryTileMessagePositive {
+  background-color: lightgreen; 
+}
+
+/*MEDIA QUERIES*/ 
+@media (max-width: 1000px){
+  #InsufficientWidthError {
+    display: block;
+  }
+  header, h1, table, footer{
+    display: none; 
+  }
+}
+
+@media (max-width: 600px){
+  #InsufficientWidthError {
+    font-size: 10px;
+  }
+}
