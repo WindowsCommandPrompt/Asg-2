@@ -11,6 +11,12 @@ jQuery(document).ready(function(){
   setTimeout(Show, 1050);
 });
 
+//Add another line of code which makes the loginbutton disappear if the user is logged in
+var something = localStorage.getItem("username"); 
+if (something != null){
+  jQuery("div.Switcher").css({"display": "none"});
+}
+
 //on leaving the page;
 jQuery("div.navElement").eq(0).on("click", function(){
   jQuery("body").css({"opacity": 0});
