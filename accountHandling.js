@@ -1,3 +1,11 @@
+(async () => { 
+  try {
+     const {getRequest, postRequest, DeleteRequest, PutRequest } = await import("./config/ajaxconfig.js") //Destructure functions and variables from this object
+  } catch (cause) {
+    console.error("File failed to open. See error: " + cause) 
+  }
+})() 
+
 var something = localStorage.getItem("sessionID").length; 
 var getExactUsername = localStorage.getItem("username"); 
 if (something > 0){ 
