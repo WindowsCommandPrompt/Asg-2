@@ -1,0 +1,25 @@
+{
+  "name": "MainPage",
+  "version": "1.0.0",
+  "description": "**Last updated: 19 February 2022 10:49AM**  <br> <br>",
+  "main": "accountHandling.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WindowsCommandPrompt/Asg-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WindowsCommandPrompt/Asg-2/issues"
+  },
+  "homepage": "https://github.com/WindowsCommandPrompt/Asg-2#readme"
+}

@@ -207,8 +207,28 @@
       </div> 
     </div> 
     <!--NO INTERNET CONNECTION--> 
-
-    
+    <div id="NoInternet"> 
+      <div class="film"> 
+        <div class="noInternet"> 
+          <div>
+            <svg width="200" height="200" id="wifiSymbolBase"> 
+              <path d="M 10 30 L 30 60 Q 90 25 170 60 L 190 30 Q 90 -15 10 30 Z" stroke="black" fill="transparent" id="internetBar3" ></path>
+              <path d="M 35 70 L 55 100 Q 100 75 150 100 L 165 70 Q 87 35 35 70 Z" stroke="black" fill="transparent" id="internetBar2"></path> 
+              <path d="M 60 110 L 80 140 Q 105 125 130 140 L 145 110 Q 100 85 60 110 Z" stroke="black" fill="transparent" id="internetBar1"></path>
+              <path d="M 83 150 L 107 190 L 127 150 Q 105 135 83 150 Z" stroke="black" fill="transparent" id="internetBar0"></path>
+            </svg>
+            <svg width="100" height="100" id="crossSymbol" style="border-style: solid;" /> 
+              <path d="M 20 20 H 30" stroke="black" fill="red" ></path>
+            </svg>
+          </div>
+          You are not connected to the internet as of now. Please reconnect to the internet before playing.
+          <br> 
+          <p id="reconnectingIndicator">
+            Reconnecting in <span id="time"><b>10</b></span>  
+          </p>
+        </div> 
+      </div> 
+    </div> 
     <header> 
       Welcome to play the game
       <div id = "Control">

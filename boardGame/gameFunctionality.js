@@ -238,14 +238,10 @@ jQuery(document).ready(function(){
     for (let index = 0; index <= target.length; index++){
       jQuery(target).eq(index).css({"animation-iteration-count": 1, "animation-duration": "0.05s", "animation-name": "newCard1", "animation-fill-mode": "forwards"}); 
     } 
-
-    //game has already started...
-    //at this point of time the program will go into the API and search for any online players
-    //At the same time check the network connectivity using the same AJAX method 
-    var seekPlayers = {
+    var addPlayerToQueue = {
       "async": true,
       "crossDomain": true,
-      "url": "https://newdatabase1-1d27.restdb.io/rest/player-list",
+      "url": "https://newdatabase1-1d27.restdb.io/rest/player-queue",
       "method": "GET",
       "headers": {
         "content-type": "application/json",
@@ -253,229 +249,254 @@ jQuery(document).ready(function(){
         "cache-control": "no-cache"
       }
     }
-    jQuery.ajax(seekPlayers).done(function(returnedResults){
+    jQuery.ajax(addPlayerToQueue).fail(function(result){
+      //Request failed as the user might not be connected to the internet or something
+    }); 
+    jQuery.ajax(addPlayerToQueue).done(function(postResult){
+      //Stores a list of player objects
       for (let index in returnedResults){
         
       }
-    }); 
-      
-      //the Main function will keep on repeating throughout the game
-      function Main () {
-        jQuery("button#quit").click(function(){
-          var decision = confirm("You sure you want to quit? You will leave this game and return to main homepage..."); 
-          window.location.href = "https://MainPage.masterzy1234.repl.co";
-        }); 
-        jQuery("button#Flip").hide(); //hide the button
-        jQuery("td.spaceOut").remove(); //remove the flipping tiles
-        //creating a div container.... 
-        jQuery("td.alignNumbers").eq(15).after('<td colspan = "13" rowspan = "13" style = "background-color: white; transition: opacity 1s"></td>'); 
-        //Append some information inside....  
-        jQuery("button#CheckPlayers").after('<button id = "Roll"> Roll Dice </button>'); 
-        jQuery("button#Roll").css({"background-color": "green", "color": "white", "border-radius": "5px", "border-style": "solid", "width": "100%", "height": "50%"});
-        //append message
-        //user input username below.... 
-        jQuery("div#BaseForUserGameNameCreation").css({"display": "flex"}); 
-        jQuery("body").css({"overflow-y": "hidden"}); 
-        jQuery("button#userCreateName").after("<br><br><label> Please enter your player name....<br><br><input type = \"text\" placeholder = \"Your player name here\" id = \"UserInputName\" required></label><br><br>"); 
-        jQuery("button#userCreateName").on("click", function(){
-          var inputLength = jQuery("input#UserInputName").val().length; 
-          if (inputLength > 0){
-            var actualInput = jQuery("input#UserInputName").val(); 
-            jQuery("div#BaseForUserGameNameCreation").css({"display": "none"}); 
-            //Add the players name onto the marker.... 
-            //Add the player markers onto the map ON SQUARE ONE...
-            jQuery("td.alignNumbers").eq(0).append('<div id = "Player1"></div>');
-            jQuery("div#Player1").append(actualInput[0]); 
-            //append the player's name to the full LocalLeaderboard table
-            jQuery("td").eq(16).append('<h1 style = "text-align: center"><u><b>Local leaderboard</b></u></h1><br><table style = "background-color: white; border-style: solid id = "LocalLeaderboard"><tr><th>PlayerName</th><th>Score</th></tr><tr><td id = "P1">Empty</td><td id = "S1">0</td></tr></table><br><br>'); 
-            jQuery("td#P1").html(actualInput); 
-            jQuery("body").css({"overflow-y": "scroll"}); 
-            jQuery('td.alignNumbers').eq(tile1).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile1).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex;">'); 
-            jQuery('td.alignNumbers').eq(tile2).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile2).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile3).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile3).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile4).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile4).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile5).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile5).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile6).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile6).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile7).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile7).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile8).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile8).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile9).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile9).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-            jQuery('td.alignNumbers').eq(tile10).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
-            jQuery('td.alignNumbers').eq(tile10).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
-          }
-          else{
-            jQuery("p#warning").after("<br><br><div style = \"width: 50%; text-align: center;background-color: red; color: white\">Sorry, this field cannot be left blank.</div>"); 
-          }
-        }); 
-        jQuery("div.internalText").on("click", function(){
+      //game has already started...
+      //at this point of time the program will go into the API and search for any online players
+      //At the same time check the network connectivity using the same AJAX method 
+      var seekPlayers = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://newdatabase1-1d27.restdb.io/rest/player-queue",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "61d254f5ccd0211b32089499",
+          "cache-control": "no-cache"
+        }
+      }
+      jQuery.ajax(seekPlayers).fail(function(result){
+        //Might be due to internet connection error
+      }); 
+      //The game will only continue if the person is connected to the internet
+      jQuery.ajax(seekPlayers).done(function(returnedResults){
+        
+        
+        //the Main function will keep on repeating throughout the game
+        function Main () {
+          jQuery("button#quit").click(function(){
+            var decision = confirm("You sure you want to quit? You will leave this game and return to main homepage..."); 
+            window.location.href = "https://MainPage.masterzy1234.repl.co";
+          }); 
+          jQuery("button#Flip").hide(); //hide the button
+          jQuery("td.spaceOut").remove(); //remove the flipping tiles
+          //creating a div container.... 
+          jQuery("td.alignNumbers").eq(15).after('<td colspan = "13" rowspan = "13" style = "background-color: white; transition: opacity 1s"></td>'); 
+          //Append some information inside....  
+          jQuery("button#CheckPlayers").after('<button id = "Roll"> Roll Dice </button>'); 
+          jQuery("button#Roll").css({"background-color": "green", "color": "white", "border-radius": "5px", "border-style": "solid", "width": "100%", "height": "50%"});
+          //append message
+          //user input username below.... 
+          jQuery("div#BaseForUserGameNameCreation").css({"display": "flex"}); 
           jQuery("body").css({"overflow-y": "hidden"}); 
-        }); 
-        jQuery("button#Roll").css({"transition": "background-color 1s, color 1s"})
-        jQuery("button#Roll").on("mouseover", function(){
-          jQuery("button#Roll").css({"cursor": "pointer"}); 
-          jQuery("button#Roll").css({"background-color": "green", "color": "lightgreen"}); 
-        }); 
-        jQuery("button#Roll").on("mouseleave", function(){
-          jQuery("button#Roll").css({"cursor": "default"}); 
-          jQuery("button#Roll").css({"background-color": "lightgreen", "color": "green"}); 
-        }); 
-        jQuery("button#Identifier").prop({"disabled": true});
-        //as long as this button is clicked, execute the following.... 
-        jQuery("button#Roll").on("click", function(){ 
-          var getIndex = Math.round((Math.random() * 6), 0); 
-          if (getIndex == 6){
-            getIndex = getIndex - 1; 
-          } 
-          else {
-            getIndex = getIndex; 
-          }
-          function GetActualItem () {
-            return arr[getIndex]; 
-          }
-          var content = GetActualItem();
-          jQuery("div#Base").css({"display": "flex"}); 
-          function Automated (){
-            jQuery("button#Identifier").prop({"disabled": false}); 
-            jQuery("button#button").hide();
-            jQuery("p#rollDiceText").hide(); 
-            jQuery("div#info").html(content); 
-            jQuery(content).css({"display": "flex"}); 
-            jQuery(content).after("<p id = \"aText\"> You have now successfully rolled the dice. Please click on the 'I acknowledge' button to continue with the game. This screen will automatically close in 3 seconds </p>"); 
-            jQuery("p#aText").css({"width": "100%", "background-color": "lightgreen", "color": "green", "text-align": "center"}); 
-            function Countdown3 () {
-              jQuery("div#info").append("<p id = \"countdown\" style = \"background-color: red; color: white; width: 100%; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;border-radius: 5px;\"><b>Closing in 3.<b></p>")
+          jQuery("button#userCreateName").after("<br><br><label> Please enter your player name....<br><br><input type = \"text\" placeholder = \"Your player name here\" id = \"UserInputName\" required></label><br><br>"); 
+          jQuery("button#userCreateName").on("click", function(){
+            var inputLength = jQuery("input#UserInputName").val().length; 
+            if (inputLength > 0){
+              var actualInput = jQuery("input#UserInputName").val(); 
+              jQuery("div#BaseForUserGameNameCreation").css({"display": "none"}); 
+              //Add the players name onto the marker.... 
+              //Add the player markers onto the map ON SQUARE ONE...
+              jQuery("td.alignNumbers").eq(0).append('<div id = "Player1"></div>');
+              jQuery("div#Player1").append(actualInput[0]); 
+              //append the player's name to the full LocalLeaderboard table
+              jQuery("td").eq(16).append('<h1 style = "text-align: center"><u><b>Local leaderboard</b></u></h1><br><table style = "background-color: white; border-style: solid id = "LocalLeaderboard"><tr><th>PlayerName</th><th>Score</th></tr><tr><td id = "P1">Empty</td><td id = "S1">0</td></tr></table><br><br>'); 
+              jQuery("td#P1").html(actualInput); 
+              jQuery("body").css({"overflow-y": "scroll"}); 
+              jQuery('td.alignNumbers').eq(tile1).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile1).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex;">'); 
+              jQuery('td.alignNumbers').eq(tile2).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile2).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile3).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile3).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile4).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile4).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile5).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile5).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile6).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile6).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile7).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile7).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile8).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile8).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile9).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile9).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
+              jQuery('td.alignNumbers').eq(tile10).css({'background-color': 'red', 'font-weight': 'bold', 'color': 'white'});
+              jQuery('td.alignNumbers').eq(tile10).append('<img src = "https://static.wixstatic.com/media/3e6e93_f03cb77a0c8f407e9b5e3b8ae5b3e629~mv2.png" alt = "Question Mark" style = "width: 50px; height: 50px; display: flex">');
             }
-            setTimeout(Countdown3, 1000)
-            function Countdown2 () {
-              jQuery("p#countdown").html("<b>Closing in 2..</b>"); 
+            else{
+              jQuery("p#warning").after("<br><br><div style = \"width: 50%; text-align: center;background-color: red; color: white\">Sorry, this field cannot be left blank.</div>"); 
             }
-            setTimeout(Countdown2, 2000); 
-            function Countdown1 () {
-              jQuery("p#countdown").html("<b>Closing in 1...</b>")
-            }
-            setTimeout(Countdown1, 3000); 
-            function CloseAutomatically () {
-              jQuery("div#Base").css({"display": "none"}); 
-            }
-            setTimeout(CloseAutomatically, 4000); 
-          }
-          setTimeout(Automated, 250);
-          //A variable named 'stepsToMove' will be responsible for the number of spaces that the marker will move on the board.
-          //index numbers
-          //0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 16 -> 18 -> 20 -> 22 -> 24 -> 26 -> 28 -> 30 -> 32 -> 34 -> 36 -> 38 -> 40 -> 55 -> 54 -> 53 -> 52 -> 51 -> 50 -> 49 -> 48 -> 47 -> 46 -> 45 -> 44 -> 43 -> 42 -> 41 -> 39 -> 37 -> 35 -> 31 -> 29 -> 27 -> 25 -> 23 -> 21 -> 19 -> 17 -> 15 
-          //jQuery("td.alignNumbers").eq(0).append('<div id = "Player1"></div>')
-          var stepsToMove = 0; 
-          stepsToMove = arr.indexOf(content) + 1;  
-          //convert innerHTML value to integer, 
-          //add innerHTML value (current position) + stepsToMove = value [convert to innerHTML]
-          var indexPosition; 
-          if (jQuery("td.alignNumbers").find("div#Player1").length){
-            indexPosition = jQuery("td.alignNumbers").index(); 
-            //index number of the eq..
-          }
-          console.log(indexPosition); 
-          var moves = stepsToMove; 
-          var targetTileNo = parseInt(jQuery("td.alignNumbers").eq(indexPosition).html()) + moves;  
-          //remove dot from initial position..... 
-          jQuery("td.alignNumbers").eq(indexPosition).children().remove();
-          var withImage = jQuery(".alignNumbers img"); 
-          var full = jQuery(".alignNumbers")
-          for (let indexPos = 0; indexPos < full.length; indexPos++){
-            if (full.eq(indexPos).text() == targetTileNo){
-              jQuery("td.alignNumbers").eq(indexPos).append('<div id = "Player1"></div>');
-              jQuery("div#Player1").append(jQuery("input#UserInputName").val()[0]); 
-            }
+          }); 
+          jQuery("div.internalText").on("click", function(){
+            jQuery("body").css({"overflow-y": "hidden"}); 
+          }); 
+          jQuery("button#Roll").css({"transition": "background-color 1s, color 1s"})
+          jQuery("button#Roll").on("mouseover", function(){
+            jQuery("button#Roll").css({"cursor": "pointer"}); 
+            jQuery("button#Roll").css({"background-color": "green", "color": "lightgreen"}); 
+          }); 
+          jQuery("button#Roll").on("mouseleave", function(){
+            jQuery("button#Roll").css({"cursor": "default"}); 
+            jQuery("button#Roll").css({"background-color": "lightgreen", "color": "green"}); 
+          }); 
+          jQuery("button#Identifier").prop({"disabled": true});
+          //as long as this button is clicked, execute the following.... 
+          jQuery("button#Roll").on("click", function(){ 
+            var getIndex = Math.round((Math.random() * 6), 0); 
+            if (getIndex == 6){
+              getIndex = getIndex - 1; 
+            } 
             else {
-              for (let index = 0; index < withImage.length; index++){
-                if (withImage.eq(index).children().text() == targetTileNo){
-                  jQuery("td.alignNumbers").eq(index).append('<div id = "Player1"></div>'); 
-                  jQuery("div#Player1").append(jQuery("input#UserInputName").val()[0]); 
+              getIndex = getIndex; 
+            }
+            function GetActualItem () {
+              return arr[getIndex]; 
+            }
+            var content = GetActualItem();
+            jQuery("div#Base").css({"display": "flex"}); 
+            function Automated (){
+              jQuery("button#Identifier").prop({"disabled": false}); 
+              jQuery("button#button").hide();
+              jQuery("p#rollDiceText").hide(); 
+              jQuery("div#info").html(content); 
+              jQuery(content).css({"display": "flex"}); 
+              jQuery(content).after("<p id = \"aText\"> You have now successfully rolled the dice. Please click on the 'I acknowledge' button to continue with the game. This screen will automatically close in 3 seconds </p>"); 
+              jQuery("p#aText").css({"width": "100%", "background-color": "lightgreen", "color": "green", "text-align": "center"}); 
+              function Countdown3 () {
+                jQuery("div#info").append("<p id = \"countdown\" style = \"background-color: red; color: white; width: 100%; height: 50px; display: flex; flex-direction: row; justify-content: center; align-items: center;border-radius: 5px;\"><b>Closing in 3.<b></p>")
+              }
+              setTimeout(Countdown3, 1000)
+              function Countdown2 () {
+                jQuery("p#countdown").html("<b>Closing in 2..</b>"); 
+              }
+              setTimeout(Countdown2, 2000); 
+              function Countdown1 () {
+                jQuery("p#countdown").html("<b>Closing in 1...</b>")
+              }
+              setTimeout(Countdown1, 3000); 
+              function CloseAutomatically () {
+                jQuery("div#Base").css({"display": "none"}); 
+              }
+              setTimeout(CloseAutomatically, 4000); 
+            }
+            setTimeout(Automated, 250);
+            //A variable named 'stepsToMove' will be responsible for the number of spaces that the marker will move on the board.
+            //index numbers
+            //0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 16 -> 18 -> 20 -> 22 -> 24 -> 26 -> 28 -> 30 -> 32 -> 34 -> 36 -> 38 -> 40 -> 55 -> 54 -> 53 -> 52 -> 51 -> 50 -> 49 -> 48 -> 47 -> 46 -> 45 -> 44 -> 43 -> 42 -> 41 -> 39 -> 37 -> 35 -> 31 -> 29 -> 27 -> 25 -> 23 -> 21 -> 19 -> 17 -> 15 
+            //jQuery("td.alignNumbers").eq(0).append('<div id = "Player1"></div>')
+            var stepsToMove = 0; 
+            stepsToMove = arr.indexOf(content) + 1;  
+            //convert innerHTML value to integer, 
+            //add innerHTML value (current position) + stepsToMove = value [convert to innerHTML]
+            var indexPosition; 
+            if (jQuery("td.alignNumbers").find("div#Player1").length){
+              indexPosition = jQuery("td.alignNumbers").index(); 
+              //index number of the eq..
+            }
+            console.log(indexPosition); 
+            var moves = stepsToMove; 
+            var targetTileNo = parseInt(jQuery("td.alignNumbers").eq(indexPosition).html()) + moves;  
+            //remove dot from initial position..... 
+            jQuery("td.alignNumbers").eq(indexPosition).children().remove();
+            var withImage = jQuery(".alignNumbers img"); 
+            var full = jQuery(".alignNumbers")
+            for (let indexPos = 0; indexPos < full.length; indexPos++){
+              if (full.eq(indexPos).text() == targetTileNo){
+                jQuery("td.alignNumbers").eq(indexPos).append('<div id = "Player1"></div>');
+                jQuery("div#Player1").append(jQuery("input#UserInputName").val()[0]); 
+              }
+              else {
+                for (let index = 0; index < withImage.length; index++){
+                  if (withImage.eq(index).children().text() == targetTileNo){
+                    jQuery("td.alignNumbers").eq(index).append('<div id = "Player1"></div>'); 
+                    jQuery("div#Player1").append(jQuery("input#UserInputName").val()[0]); 
+                  }
                 }
               }
             }
-          }
-          jQuery("button#Roll").prop({"disabled": true})
-          jQuery("button#Roll").css({"cursor": "not-allowed"}); 
-          function ButtonRollCountdown15 () {
-            jQuery("button#Roll").html("<p id = \"ButtonRollIndicator\">You can roll again in 15 seconds."); 
-          }
-          setTimeout(ButtonRollCountdown15, 5000); 
-          function ButtonRollCountdown14 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 14 seconds.."); 
-          }
-          setTimeout(ButtonRollCountdown14, 6000); 
-          function ButtonRollCountdown13 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 13 seconds..."); 
-          }
-          setTimeout(ButtonRollCountdown13, 7000); 
-          function ButtonRollCountdown12 () { 
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 12 seconds."); 
-          }
-          setTimeout(ButtonRollCountdown12, 8000); 
-          function ButtonRollCountdown11 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 11 seconds.."); 
-          }
-          setTimeout(ButtonRollCountdown11, 9000); 
-          function ButtonRollCountdown10 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 10 seconds..."); 
-          }
-          setTimeout(ButtonRollCountdown10, 10000); 
-          function ButtonRollCountdown9 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 9 seconds."); 
-          }
-          setTimeout(ButtonRollCountdown9, 11000); 
-          function ButtonRollCountdown8 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 8 seconds.."); 
-          }
-          setTimeout(ButtonRollCountdown8, 12000); 
-          function ButtonRollCountdown7 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 7 seconds..."); 
-          }
-          setTimeout(ButtonRollCountdown7, 13000); 
-          function ButtonRollCountdown6 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 6 seconds."); 
-          }
-          setTimeout(ButtonRollCountdown6, 14000); 
-          function ButtonRollCountdown5() {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 5 seconds.."); 
-          }
-          setTimeout(ButtonRollCountdown5, 15000); 
-          function ButtonRollCountdown4 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 4 seconds..."); 
-          }
-          setTimeout(ButtonRollCountdown4, 16000); 
-          function ButtonRollCountdown3 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 3 seconds."); 
-          }
-          setTimeout(ButtonRollCountdown3, 17000); 
-          function ButtonRollCountdown2 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 2 seconds.."); 
-          }
-          setTimeout(ButtonRollCountdown2, 18000); 
-          function ButtonRollCountdown1 () {
-            jQuery("p#ButtonRollIndicator").html("You can roll again in 1 second..."); 
-          }
-          setTimeout(ButtonRollCountdown1, 19000); 
-          function EnableButton(){
-            jQuery("button#Roll").prop({"disabled": false}); 
-            jQuery("button#Roll").css({"cursor": "pointer"});
-            jQuery("button#Roll").html("Roll Dice");  
-            jQuery("button#Identifier").prop({"disabled": true}); 
-            jQuery("button#Identifier").css({"cursor": "not-allowed"}); 
-            jQuery("div#info").html('<p id = "rollDiceText">  Do take note that you have only 1 chance to roll the dice </p>'); 
-          }
-          setTimeout(EnableButton, 20000) 
-        }); //Flip
-      }
-      setTimeout(Main, 10000);
+            jQuery("button#Roll").prop({"disabled": true})
+            jQuery("button#Roll").css({"cursor": "not-allowed"}); 
+            function ButtonRollCountdown15 () {
+              jQuery("button#Roll").html("<p id = \"ButtonRollIndicator\">You can roll again in 15 seconds."); 
+            }
+            setTimeout(ButtonRollCountdown15, 5000); 
+            function ButtonRollCountdown14 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 14 seconds.."); 
+            }
+            setTimeout(ButtonRollCountdown14, 6000); 
+            function ButtonRollCountdown13 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 13 seconds..."); 
+            }
+            setTimeout(ButtonRollCountdown13, 7000); 
+            function ButtonRollCountdown12 () { 
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 12 seconds."); 
+            }
+            setTimeout(ButtonRollCountdown12, 8000); 
+            function ButtonRollCountdown11 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 11 seconds.."); 
+            }
+            setTimeout(ButtonRollCountdown11, 9000); 
+            function ButtonRollCountdown10 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 10 seconds..."); 
+            }
+            setTimeout(ButtonRollCountdown10, 10000); 
+            function ButtonRollCountdown9 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 9 seconds."); 
+            }
+            setTimeout(ButtonRollCountdown9, 11000); 
+            function ButtonRollCountdown8 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 8 seconds.."); 
+            }
+            setTimeout(ButtonRollCountdown8, 12000); 
+            function ButtonRollCountdown7 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 7 seconds..."); 
+            }
+            setTimeout(ButtonRollCountdown7, 13000); 
+            function ButtonRollCountdown6 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 6 seconds."); 
+            }
+            setTimeout(ButtonRollCountdown6, 14000); 
+            function ButtonRollCountdown5() {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 5 seconds.."); 
+            }
+            setTimeout(ButtonRollCountdown5, 15000); 
+            function ButtonRollCountdown4 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 4 seconds..."); 
+            }
+            setTimeout(ButtonRollCountdown4, 16000); 
+            function ButtonRollCountdown3 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 3 seconds."); 
+            }
+            setTimeout(ButtonRollCountdown3, 17000); 
+            function ButtonRollCountdown2 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 2 seconds.."); 
+            }
+            setTimeout(ButtonRollCountdown2, 18000); 
+            function ButtonRollCountdown1 () {
+              jQuery("p#ButtonRollIndicator").html("You can roll again in 1 second..."); 
+            }
+            setTimeout(ButtonRollCountdown1, 19000); 
+            function EnableButton(){
+              jQuery("button#Roll").prop({"disabled": false}); 
+              jQuery("button#Roll").css({"cursor": "pointer"});
+              jQuery("button#Roll").html("Roll Dice");  
+              jQuery("button#Identifier").prop({"disabled": true}); 
+              jQuery("button#Identifier").css({"cursor": "not-allowed"}); 
+              jQuery("div#info").html('<p id = "rollDiceText">  Do take note that you have only 1 chance to roll the dice </p>'); 
+            }
+            setTimeout(EnableButton, 20000) 
+          }); //Flip
+        }
+        setTimeout(Main, 10000);
+      }); 
+    }); 
   }); 
 }); 
 

@@ -1,3 +1,36 @@
+const requests = (async () => { 
+  try {
+     const {getRequest, postRequest, 
+            DeleteRequest, PutRequest, 
+     } = await import("./config/ajaxconfig.js") //Destructure functions and variables from this object
+     return { 
+       __getRequest__: getRequest, 
+       __postRequest__: postRequest, 
+       __DeleteRequest__: DeleteRequest, 
+       __PutRequest__: PutRequest
+     } 
+  } catch (cause) {
+    console.error("File failed to open. See error: " + cause) 
+  }
+})() 
+
+require("")
+
+ console.log("sdfsdf", requests.__getRequest__)
+
+//dangerous
+fetch("https://api.ipify.org/?format=json").then((response) => {
+  const blob = response.json(); 
+  blob.then((data) => {
+    const ip = data["ip"] 
+    console.log(ip)
+  }); 
+});
+
+//query banned ip addresses at the following address: https://banned-7111.restdb.io/rest/banned-addresses  
+
+
+
 var something = localStorage.getItem("sessionID").length; 
 var getExactUsername = localStorage.getItem("username"); 
 if (something > 0){ 
@@ -30,7 +63,7 @@ jQuery("button#logInButtonVerify").on("click", function(){
       "cache-control": "no-cache"
     }
   }
-  jQuery.ajax(getFromAPI).done(function(getResponse){
+  jQuery.ajax(request.__getRequest__).done(function(getResponse){
     var targetID; 
     for(let index = 0; index < getResponse.length; index++){
       if (getResponse[index].username == getExactUsername){
@@ -40,6 +73,8 @@ jQuery("button#logInButtonVerify").on("click", function(){
       }
     }
     console.log(targetID);
+  }).fail(function() {
+    //attempt to query another api of the same set of data
   }); 
 }); 
 
@@ -60,7 +95,7 @@ jQuery("div.red").on("click", function(){
       "cache-control": "no-cache"
     }
   }
-  jQuery.ajax(getTargetSettings).done(function(responseFromLoginInformationAPI){
+  jQuery.ajax(request.__getRequest__).done(function(responseFromLoginInformationAPI){
     var targetAccountID; 
     for (let apiIndex = 0; apiIndex < responseFromLoginInformationAPI.length; apiIndex++){
       if (localStorage.getItem("username")  == responseFromLoginInformationAPI[apiIndex].username){
