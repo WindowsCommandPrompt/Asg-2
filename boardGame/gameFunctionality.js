@@ -238,8 +238,10 @@ jQuery(document).ready(function(){
     for (let index = 0; index <= target.length; index++){
       jQuery(target).eq(index).css({"animation-iteration-count": 1, "animation-duration": "0.05s", "animation-name": "newCard1", "animation-fill-mode": "forwards"}); 
     } 
+
     //game has already started...
     //at this point of time the program will go into the API and search for any online players
+    //At the same time check the network connectivity using the same AJAX method 
     var seekPlayers = {
       "async": true,
       "crossDomain": true,
@@ -251,11 +253,12 @@ jQuery(document).ready(function(){
         "cache-control": "no-cache"
       }
     }
-    jQuery(seekPlayers).done(function(returnedResults){
+    jQuery.ajax(seekPlayers).done(function(returnedResults){
       for (let index in returnedResults){
         
       }
     }); 
+      
       //the Main function will keep on repeating throughout the game
       function Main () {
         jQuery("button#quit").click(function(){
